@@ -29,6 +29,8 @@ from tariff_engine.rates import (
 )
 from tariff_engine.history import get_tariff_rates_for_date
 from tariff_engine.savings import calculate_hourly_savings
+from tariff_engine.admin_fees import get_eskom_admin_fee, get_eskom_admin_fee_pa
+from tariff_engine.eligibility import supports_banking, supports_gen_offset
 
 __all__ = [
     # TOU schedule
@@ -41,4 +43,9 @@ __all__ = [
     # Dashboard extras
     "get_tariff_rates_for_date",
     "calculate_hourly_savings",
+    # Eskom Gen-Offset / Banking
+    "get_eskom_admin_fee",
+    "get_eskom_admin_fee_pa",
+    "supports_banking",
+    "supports_gen_offset",
 ]

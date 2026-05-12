@@ -1782,6 +1782,45 @@
             "service_charge_pa": 9190.7,
             "demand_charge_kva": 0.0
           }
+        },
+        "admin_fees": {
+          "_comment": "Eskom Gen-Offset/Banking admin fee tier table (ex-VAT, R/POD/day). Source: Schedule of Standard Prices 1-Apr-2026, Tables 33 (urban) and 34 (rural). Tier matched by NMD/utilised capacity (kVA). max_kva=null = upper-open tier.",
+          "urban": [
+            {
+              "max_kva": 100,
+              "admin_r_per_pod_per_day": 0.79
+            },
+            {
+              "max_kva": 500,
+              "admin_r_per_pod_per_day": 13.49
+            },
+            {
+              "max_kva": 1000,
+              "admin_r_per_pod_per_day": 21.07
+            },
+            {
+              "max_kva": null,
+              "admin_r_per_pod_per_day": 21.07
+            }
+          ],
+          "rural": [
+            {
+              "max_kva": 100,
+              "admin_r_per_pod_per_day": 1.47
+            },
+            {
+              "max_kva": 500,
+              "admin_r_per_pod_per_day": 13.49
+            },
+            {
+              "max_kva": 1000,
+              "admin_r_per_pod_per_day": 21.07
+            },
+            {
+              "max_kva": null,
+              "admin_r_per_pod_per_day": 21.07
+            }
+          ]
         }
       }
     ]
