@@ -2256,18 +2256,48 @@
         {
           "effective": "2025-07-01",
           "tariffs": {
-            "CoE Tariff D1 LV TOU (NAC<1MVA)": {
-              "type": "municipal_tou",
+            "CoE Tariff B Mixed Three Phase": {
+              "type": "municipal_flat",
               "energy_c_per_kwh": {
                 "HD": {
-                  "P": 1183.5,
-                  "S": 345.23,
-                  "O": 212.92
+                  "P": 348.43,
+                  "S": 348.43,
+                  "O": 348.43
                 },
                 "LD": {
-                  "P": 387.04,
-                  "S": 254.24,
-                  "O": 193.74
+                  "P": 283.91,
+                  "S": 283.91,
+                  "O": 283.91
+                }
+              },
+              "export_c_per_kwh": {
+                "HD": {
+                  "P": 105.38,
+                  "S": 105.38,
+                  "O": 105.38
+                },
+                "LD": {
+                  "P": 105.38,
+                  "S": 105.38,
+                  "O": 105.38
+                }
+              },
+              "service_r_month": 91.95,
+              "capacity_r_kva_month": 26.57,
+              "demand_r_kva_month": 0
+            },
+            "CoE Tariff C LV (230/400V)": {
+              "type": "municipal_flat",
+              "energy_c_per_kwh": {
+                "HD": {
+                  "P": 461.43,
+                  "S": 461.43,
+                  "O": 461.43
+                },
+                "LD": {
+                  "P": 226.41,
+                  "S": 226.41,
+                  "O": 226.41
                 }
               },
               "export_c_per_kwh": {
@@ -2282,22 +2312,112 @@
                   "O": 96.11
                 }
               },
-              "service_r_month": 3351.26,
-              "capacity_r_kva_month": 118.25,
-              "demand_r_kva_month": 175.69
+              "service_r_month": 3389.73,
+              "capacity_r_kva_month": 99.15,
+              "demand_r_kva_month": 242.19
+            },
+            "CoE Tariff C LV Direct from Substation": {
+              "type": "municipal_flat",
+              "energy_c_per_kwh": {
+                "HD": {
+                  "P": 452.66,
+                  "S": 452.66,
+                  "O": 452.66
+                },
+                "LD": {
+                  "P": 220.17,
+                  "S": 220.17,
+                  "O": 220.17
+                }
+              },
+              "export_c_per_kwh": {
+                "HD": {
+                  "P": 140.54,
+                  "S": 140.54,
+                  "O": 140.54
+                },
+                "LD": {
+                  "P": 96.11,
+                  "S": 96.11,
+                  "O": 96.11
+                }
+              },
+              "service_r_month": 3389.73,
+              "capacity_r_kva_month": 96.23,
+              "demand_r_kva_month": 236.54
+            },
+            "CoE Tariff C MV (>230/400V & <=11kV)": {
+              "type": "municipal_flat",
+              "energy_c_per_kwh": {
+                "HD": {
+                  "P": 445.22,
+                  "S": 445.22,
+                  "O": 445.22
+                },
+                "LD": {
+                  "P": 215.2,
+                  "S": 215.2,
+                  "O": 215.2
+                }
+              },
+              "export_c_per_kwh": {
+                "HD": {
+                  "P": 140.54,
+                  "S": 140.54,
+                  "O": 140.54
+                },
+                "LD": {
+                  "P": 96.11,
+                  "S": 96.11,
+                  "O": 96.11
+                }
+              },
+              "service_r_month": 5179.21,
+              "capacity_r_kva_month": 90.09,
+              "demand_r_kva_month": 227.16
+            },
+            "CoE Tariff D1 LV TOU (NAC<1MVA)": {
+              "type": "municipal_tou",
+              "energy_c_per_kwh": {
+                "HD": {
+                  "P": 1086.79,
+                  "S": 317.74,
+                  "O": 196.36
+                },
+                "LD": {
+                  "P": 356.1,
+                  "S": 234.26,
+                  "O": 178.76
+                }
+              },
+              "export_c_per_kwh": {
+                "HD": {
+                  "P": 140.54,
+                  "S": 140.54,
+                  "O": 140.54
+                },
+                "LD": {
+                  "P": 96.11,
+                  "S": 96.11,
+                  "O": 96.11
+                }
+              },
+              "service_r_month": 3069.24,
+              "capacity_r_kva_month": 105.86,
+              "demand_r_kva_month": 158.13
             },
             "CoE Tariff D2 LV TOU Direct (NAC>=1MVA)": {
               "type": "municipal_tou",
               "energy_c_per_kwh": {
                 "HD": {
-                  "P": 895.4,
-                  "S": 308.37,
-                  "O": 193.42
+                  "P": 716.22,
+                  "S": 228.82,
+                  "O": 174.66
                 },
                 "LD": {
-                  "P": 347.25,
-                  "S": 226.8,
-                  "O": 179.25
+                  "P": 336.06,
+                  "S": 218.0,
+                  "O": 174.66
                 }
               },
               "export_c_per_kwh": {
@@ -2312,22 +2432,22 @@
                   "O": 96.11
                 }
               },
-              "service_r_month": 5153.5,
-              "capacity_r_kva_month": 107.28,
-              "demand_r_kva_month": 161.51
+              "service_r_month": 1029.41,
+              "capacity_r_kva_month": 145.2,
+              "demand_r_kva_month": 168.95
             },
             "CoE Tariff D3 MV TOU (NAC>=1MVA)": {
               "type": "municipal_tou",
               "energy_c_per_kwh": {
                 "HD": {
-                  "P": 880.37,
-                  "S": 302.96,
-                  "O": 189.31
+                  "P": 708.29,
+                  "S": 220.89,
+                  "O": 166.74
                 },
                 "LD": {
-                  "P": 341.02,
-                  "S": 222.23,
-                  "O": 175.28
+                  "P": 328.13,
+                  "S": 210.07,
+                  "O": 166.74
                 }
               },
               "export_c_per_kwh": {
@@ -2342,22 +2462,22 @@
                   "O": 96.11
                 }
               },
-              "service_r_month": 5661.8,
-              "capacity_r_kva_month": 100.13,
-              "demand_r_kva_month": 152.61
+              "service_r_month": 3302.34,
+              "capacity_r_kva_month": 120.57,
+              "demand_r_kva_month": 140.68
             },
             "CoE Tariff D4 HV TOU (NAC>=1MVA)": {
               "type": "municipal_tou",
               "energy_c_per_kwh": {
                 "HD": {
-                  "P": 825.82,
-                  "S": 282.34,
-                  "O": 176.58
+                  "P": 702.91,
+                  "S": 215.51,
+                  "O": 161.35
                 },
                 "LD": {
-                  "P": 319.59,
-                  "S": 207.87,
-                  "O": 163.52
+                  "P": 322.75,
+                  "S": 204.68,
+                  "O": 161.35
                 }
               },
               "export_c_per_kwh": {
@@ -2372,22 +2492,112 @@
                   "O": 96.11
                 }
               },
-              "service_r_month": 10042.22,
-              "capacity_r_kva_month": 90.72,
-              "demand_r_kva_month": 139.09
+              "service_r_month": 11822.44,
+              "capacity_r_kva_month": 103.41,
+              "demand_r_kva_month": 120.82
+            },
+            "CoE Tariff E LV TOU Direct (NAC<1MVA)": {
+              "type": "municipal_tou",
+              "energy_c_per_kwh": {
+                "HD": {
+                  "P": 1067.09,
+                  "S": 309.81,
+                  "O": 190.53
+                },
+                "LD": {
+                  "P": 348.33,
+                  "S": 228.18,
+                  "O": 173.48
+                }
+              },
+              "export_c_per_kwh": {
+                "HD": {
+                  "P": 140.54,
+                  "S": 140.54,
+                  "O": 140.54
+                },
+                "LD": {
+                  "P": 96.11,
+                  "S": 96.11,
+                  "O": 96.11
+                }
+              },
+              "service_r_month": 3069.24,
+              "capacity_r_kva_month": 102.97,
+              "demand_r_kva_month": 154.09
+            },
+            "CoE Tariff E MV TOU (NAC<1MVA)": {
+              "type": "municipal_tou",
+              "energy_c_per_kwh": {
+                "HD": {
+                  "P": 1049.02,
+                  "S": 304.03,
+                  "O": 186.09
+                },
+                "LD": {
+                  "P": 341.5,
+                  "S": 223.14,
+                  "O": 169.26
+                }
+              },
+              "export_c_per_kwh": {
+                "HD": {
+                  "P": 140.54,
+                  "S": 140.54,
+                  "O": 140.54
+                },
+                "LD": {
+                  "P": 96.11,
+                  "S": 96.11,
+                  "O": 96.11
+                }
+              },
+              "service_r_month": 5207.09,
+              "capacity_r_kva_month": 96.62,
+              "demand_r_kva_month": 146.09
+            },
+            "CoE Tariff E HV TOU (NAC<1MVA)": {
+              "type": "municipal_tou",
+              "energy_c_per_kwh": {
+                "HD": {
+                  "P": 980.66,
+                  "S": 283.61,
+                  "O": 173.71
+                },
+                "LD": {
+                  "P": 319.97,
+                  "S": 208.65,
+                  "O": 158.14
+                }
+              },
+              "export_c_per_kwh": {
+                "HD": {
+                  "P": 140.54,
+                  "S": 140.54,
+                  "O": 140.54
+                },
+                "LD": {
+                  "P": 96.11,
+                  "S": 96.11,
+                  "O": 96.11
+                }
+              },
+              "service_r_month": 6911.12,
+              "capacity_r_kva_month": 87.79,
+              "demand_r_kva_month": 133.43
             },
             "CoE Tariff J MV/HV Close-Coupled (NAC>=1MVA)": {
               "type": "municipal_tou",
               "energy_c_per_kwh": {
                 "HD": {
-                  "P": 844.72,
-                  "S": 268.56,
-                  "O": 162.78
+                  "P": 699.67,
+                  "S": 212.27,
+                  "O": 158.11
                 },
                 "LD": {
-                  "P": 307.9,
-                  "S": 213.01,
-                  "O": 146.8
+                  "P": 319.51,
+                  "S": 201.45,
+                  "O": 158.11
                 }
               },
               "export_c_per_kwh": {
@@ -2402,9 +2612,9 @@
                   "O": 96.11
                 }
               },
-              "service_r_month": 280431.02,
-              "capacity_r_kva_month": 68.51,
-              "demand_r_kva_month": 85.31
+              "service_r_month": 11822.44,
+              "capacity_r_kva_month": 68.1,
+              "demand_r_kva_month": 80.56
             }
           }
         }
@@ -3228,6 +3438,25 @@
         {
           "effective": "2025-07-01",
           "tariffs": {
+            "Tshwane Domestic Bulk Standard Supply": {
+              "type": "municipal_flat",
+              "energy_c_per_kwh": {
+                "HD": {
+                  "P": 297.23,
+                  "S": 297.23,
+                  "O": 297.23
+                },
+                "LD": {
+                  "P": 297.23,
+                  "S": 297.23,
+                  "O": 297.23
+                }
+              },
+              "export_c_per_kwh": null,
+              "service_r_month": 1128.78,
+              "capacity_r_kva_month": 0,
+              "demand_r_kva_month": 0
+            },
             "Tshwane LV TOU": {
               "type": "municipal_tou",
               "energy_c_per_kwh": {
@@ -3397,7 +3626,18 @@
                   "O": 146.19
                 }
               },
-              "export_c_per_kwh": null,
+              "export_c_per_kwh": {
+                "HD": {
+                  "P": 94.88,
+                  "S": 94.88,
+                  "O": 94.88
+                },
+                "LD": {
+                  "P": 94.88,
+                  "S": 94.88,
+                  "O": 94.88
+                }
+              },
               "service_r_month": 3671.55,
               "capacity_r_kva_month": 32.13,
               "demand_r_kva_month": 428.39
@@ -3416,10 +3656,51 @@
                   "O": 144.68
                 }
               },
-              "export_c_per_kwh": null,
+              "export_c_per_kwh": {
+                "HD": {
+                  "P": 94.88,
+                  "S": 94.88,
+                  "O": 94.88
+                },
+                "LD": {
+                  "P": 94.88,
+                  "S": 94.88,
+                  "O": 94.88
+                }
+              },
               "service_r_month": 3671.55,
               "capacity_r_kva_month": 29.61,
               "demand_r_kva_month": 428.39
+            },
+            "Langeberg Commercial Three Phase 100kVA": {
+              "type": "municipal_flat",
+              "energy_c_per_kwh": {
+                "HD": {
+                  "P": 294.0,
+                  "S": 294.0,
+                  "O": 294.0
+                },
+                "LD": {
+                  "P": 294.0,
+                  "S": 294.0,
+                  "O": 294.0
+                }
+              },
+              "export_c_per_kwh": {
+                "HD": {
+                  "P": 94.88,
+                  "S": 94.88,
+                  "O": 94.88
+                },
+                "LD": {
+                  "P": 94.88,
+                  "S": 94.88,
+                  "O": 94.88
+                }
+              },
+              "service_r_month": 2383.86,
+              "capacity_r_kva_month": 0,
+              "demand_r_kva_month": 0
             },
             "Langeberg TOU LT <11kV": {
               "type": "municipal_tou",
