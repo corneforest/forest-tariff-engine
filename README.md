@@ -47,20 +47,31 @@ pip install -e ".[dev]"
 pytest
 ```
 
-## Updating tariffs
+## Updating tariffs / releasing
 
-1. Edit `tariff_engine/tariff_data.json` directly, or run the helper:
-   ```bash
-   py scripts/update_tariffs_2026.py
-   ```
-2. Run tests: `pytest`
-3. Commit and push:
-   ```bash
-   git commit -am "tariffs: 2026/27 Eskom rates"
-   git tag v2026.04
-   git push --tags origin main
-   ```
-4. In each consumer repo (Solar Model, Dashboard), bump the pinned version in `requirements.txt`.
+**Read [`RELEASING.md`](RELEASING.md) before cutting a release.** It is the
+canonical procedure and exists to prevent version/tag drift.
+
+Key rules:
+
+- `pyproject.toml` `version` is the **single source of truth**. The git tag is
+  always `v{that version}`; egg-info and `dist/` are derived build output.
+- **Never release from a stale checkout.** Always `git fetch origin --tags &&
+  git merge --ff-only origin/main` first.
+- Run the pre-flight check before tagging. It fails if the branch is behind
+  origin, the tag already exists, or the version is malformed:
+  ```bash
+  py scripts/check_release.py
+  ```
+
+Short version:
+
+1. Sync: `git fetch origin --tags && git merge --ff-only origin/main`
+2. Edit `tariff_engine/tariff_data.json` (directly or via a `scripts/update_*.py` helper).
+3. Bump `version` in `pyproject.toml` (PATCH = data on existing tariffs, MINOR = new tariffs, MAJOR = schema break).
+4. `py scripts/check_release.py` (must print OK), then `py -m pytest -q`, then `py -m build`.
+5. Commit, then `git tag -a v<version> ...`, then `git push origin main && git push origin v<version>`.
+6. Bump the pinned version in each consumer repo (Solar Model, Dashboard) `requirements.txt`.
 
 ## Schema versioning
 
