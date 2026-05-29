@@ -3327,7 +3327,18 @@
                   "O": 159.39
                 }
               },
-              "export_c_per_kwh": null,
+              "export_c_per_kwh": {
+                "HD": {
+                  "P": 104.0,
+                  "S": 104.0,
+                  "O": 104.0
+                },
+                "LD": {
+                  "P": 104.0,
+                  "S": 104.0,
+                  "O": 104.0
+                }
+              },
               "service_r_month": 4480.0,
               "capacity_r_kva_month": 0,
               "demand_r_kva_month": 488.0
@@ -3346,7 +3357,18 @@
                   "O": 159.39
                 }
               },
-              "export_c_per_kwh": null,
+              "export_c_per_kwh": {
+                "HD": {
+                  "P": 104.0,
+                  "S": 104.0,
+                  "O": 104.0
+                },
+                "LD": {
+                  "P": 104.0,
+                  "S": 104.0,
+                  "O": 104.0
+                }
+              },
               "service_r_month": 4481.0,
               "capacity_r_kva_month": 0,
               "demand_r_kva_month": 488.0
@@ -3365,7 +3387,18 @@
                   "O": 159.39
                 }
               },
-              "export_c_per_kwh": null,
+              "export_c_per_kwh": {
+                "HD": {
+                  "P": 104.0,
+                  "S": 104.0,
+                  "O": 104.0
+                },
+                "LD": {
+                  "P": 104.0,
+                  "S": 104.0,
+                  "O": 104.0
+                }
+              },
               "service_r_month": 33702.0,
               "capacity_r_kva_month": 0,
               "demand_r_kva_month": 488.0
@@ -3384,7 +3417,18 @@
                   "O": 159.39
                 }
               },
-              "export_c_per_kwh": null,
+              "export_c_per_kwh": {
+                "HD": {
+                  "P": 104.0,
+                  "S": 104.0,
+                  "O": 104.0
+                },
+                "LD": {
+                  "P": 104.0,
+                  "S": 104.0,
+                  "O": 104.0
+                }
+              },
               "service_r_month": 4481.0,
               "capacity_r_kva_month": 0,
               "demand_r_kva_month": 488.0
@@ -3403,7 +3447,18 @@
                   "O": 159.39
                 }
               },
-              "export_c_per_kwh": null,
+              "export_c_per_kwh": {
+                "HD": {
+                  "P": 104.0,
+                  "S": 104.0,
+                  "O": 104.0
+                },
+                "LD": {
+                  "P": 104.0,
+                  "S": 104.0,
+                  "O": 104.0
+                }
+              },
               "service_r_month": 42576.0,
               "capacity_r_kva_month": 0,
               "demand_r_kva_month": 488.0
@@ -3422,7 +3477,18 @@
                   "O": 159.39
                 }
               },
-              "export_c_per_kwh": null,
+              "export_c_per_kwh": {
+                "HD": {
+                  "P": 104.0,
+                  "S": 104.0,
+                  "O": 104.0
+                },
+                "LD": {
+                  "P": 104.0,
+                  "S": 104.0,
+                  "O": 104.0
+                }
+              },
               "service_r_month": 65937.0,
               "capacity_r_kva_month": 0,
               "demand_r_kva_month": 488.0
