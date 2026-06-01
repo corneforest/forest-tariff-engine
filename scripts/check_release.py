@@ -9,6 +9,8 @@ enforces the rules that prevent version/tag drift (see RELEASING.md):
      checkout. This is what caused the v1.2.0/v1.2.1 confusion).
   3. The tag v{version} must NOT already exist (no collision / no re-use).
   4. The version must be valid semver (MAJOR.MINOR.PATCH).
+  5. CHANGELOG.md must have an entry for the version, so consuming programs
+     know what changed (never bump a version without update notes).
 
 Usage:
     py scripts/check_release.py
@@ -24,6 +26,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 PYPROJECT = ROOT / "pyproject.toml"
+CHANGELOG = ROOT / "CHANGELOG.md"
 
 GREEN = "\033[92m"
 RED = "\033[91m"
@@ -99,7 +102,23 @@ def main() -> int:
             f"    Bump the version in pyproject.toml. Never re-use a tag."
         )
 
-    # 5. Informational: uncommitted changes --------------------------------
+    # 5. CHANGELOG.md must document this version ---------------------------
+    if not CHANGELOG.exists():
+        failures.append(
+            "CHANGELOG.md is missing. Add update notes so consuming programs "
+            "know what changed."
+        )
+    else:
+        changelog_text = CHANGELOG.read_text(encoding="utf-8")
+        if not re.search(rf"^##\s*\[{re.escape(version)}\]", changelog_text, re.MULTILINE):
+            failures.append(
+                f"CHANGELOG.md has no entry for {version}.\n"
+                f"    Add a '## [{version}] - <YYYY-MM-DD>' section describing "
+                f"what changed.\n"
+                f"    Never bump a version without update notes."
+            )
+
+    # 6. Informational: uncommitted changes --------------------------------
     status = git("status", "--porcelain").stdout.strip()
     if status:
         warnings.append(

@@ -48,7 +48,12 @@ If `--ff-only` fails, stop and reconcile before doing anything else.
    | **New** tariffs, providers, or corrected published rates | MINOR | 1.2.1 -> 1.3.0 |
    | Schema change or breaking API change | MAJOR | 1.x -> 2.0.0 |
 
-4. **Pre-flight check.** This enforces sync, semver, and tag-collision rules:
+4. **Add update notes.** Add a new entry to [CHANGELOG.md](CHANGELOG.md) under a
+   `## [<version>] - <YYYY-MM-DD>` heading describing what changed (Added /
+   Changed / Fixed). This is how consuming programs (Solar Model, Dashboard)
+   know what each version pin brings. Never bump a version without it.
+
+5. **Pre-flight check.** This enforces sync, semver, and tag-collision rules:
 
    ```bash
    py scripts/check_release.py
@@ -56,19 +61,19 @@ If `--ff-only` fails, stop and reconcile before doing anything else.
 
    Do not proceed unless it prints `OK  Safe to release`.
 
-5. **Test:**
+6. **Test:**
 
    ```bash
    py -m pytest -q
    ```
 
-6. **Build** (regenerates dist + egg-info at the new version; clear stale ones):
+7. **Build** (regenerates dist + egg-info at the new version; clear stale ones):
 
    ```bash
    py -m build
    ```
 
-7. **Commit, tag (matching pyproject exactly), push:**
+8. **Commit, tag (matching pyproject exactly), push:**
 
    ```bash
    git commit -am "tariffs: <summary> (v<version>)"
@@ -77,14 +82,14 @@ If `--ff-only` fails, stop and reconcile before doing anything else.
    git push origin v<version>
    ```
 
-8. **Bump downstream consumers.** Update the pin in `requirements.txt` of the
+9. **Bump downstream consumers.** Update the pin in `requirements.txt` of the
    Solar Model and Solar Dashboard repos from the old `@v<old>` to `@v<new>`.
 
 ## Quick reference
 
 ```bash
 git fetch origin --tags && git merge --ff-only origin/main
-# ...make change, bump pyproject.toml version...
+# ...make change, bump pyproject.toml version, add CHANGELOG.md entry...
 py scripts/check_release.py && py -m pytest -q && py -m build
 git commit -am "tariffs: ... (v1.2.x)"
 git tag -a v1.2.x -m "v1.2.x - ..."
