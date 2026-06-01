@@ -4215,6 +4215,257 @@
           }
         }
       ]
+    },
+    "Ephraim Mogale": {
+      "escalation_month": 7,
+      "escalation_day": 1,
+      "versions": [
+        {
+          "effective": "2025-07-01",
+          "tariffs": {
+            "Ephraim Mogale Commercial/Industrial Conventional Three Phase 80A": {
+              "type": "municipal_flat",
+              "energy_c_per_kwh": {
+                "HD": {
+                  "P": 264.0,
+                  "S": 264.0,
+                  "O": 264.0
+                },
+                "LD": {
+                  "P": 264.0,
+                  "S": 264.0,
+                  "O": 264.0
+                }
+              },
+              "export_c_per_kwh": {
+                "HD": {
+                  "P": 172.0,
+                  "S": 172.0,
+                  "O": 172.0
+                },
+                "LD": {
+                  "P": 172.0,
+                  "S": 172.0,
+                  "O": 172.0
+                }
+              },
+              "service_r_month": 2739.74,
+              "capacity_r_kva_month": 0,
+              "demand_r_kva_month": 0.0
+            },
+            "Ephraim Mogale Commercial/Industrial Conventional Three Phase 150A": {
+              "type": "municipal_flat",
+              "energy_c_per_kwh": {
+                "HD": {
+                  "P": 264.0,
+                  "S": 264.0,
+                  "O": 264.0
+                },
+                "LD": {
+                  "P": 264.0,
+                  "S": 264.0,
+                  "O": 264.0
+                }
+              },
+              "export_c_per_kwh": {
+                "HD": {
+                  "P": 172.0,
+                  "S": 172.0,
+                  "O": 172.0
+                },
+                "LD": {
+                  "P": 172.0,
+                  "S": 172.0,
+                  "O": 172.0
+                }
+              },
+              "service_r_month": 5190.02,
+              "capacity_r_kva_month": 0,
+              "demand_r_kva_month": 0.0
+            },
+            "Ephraim Mogale Bulk Commercial 150A": {
+              "type": "municipal_flat",
+              "energy_c_per_kwh": {
+                "HD": {
+                  "P": 190.0,
+                  "S": 190.0,
+                  "O": 190.0
+                },
+                "LD": {
+                  "P": 190.0,
+                  "S": 190.0,
+                  "O": 190.0
+                }
+              },
+              "export_c_per_kwh": {
+                "HD": {
+                  "P": 172.0,
+                  "S": 172.0,
+                  "O": 172.0
+                },
+                "LD": {
+                  "P": 172.0,
+                  "S": 172.0,
+                  "O": 172.0
+                }
+              },
+              "service_r_month": 9976.4,
+              "capacity_r_kva_month": 0,
+              "demand_r_kva_month": 292.22
+            },
+            "Ephraim Mogale Industrial Bulk 150A": {
+              "type": "municipal_flat",
+              "energy_c_per_kwh": {
+                "HD": {
+                  "P": 188.0,
+                  "S": 188.0,
+                  "O": 188.0
+                },
+                "LD": {
+                  "P": 188.0,
+                  "S": 188.0,
+                  "O": 188.0
+                }
+              },
+              "export_c_per_kwh": {
+                "HD": {
+                  "P": 172.0,
+                  "S": 172.0,
+                  "O": 172.0
+                },
+                "LD": {
+                  "P": 172.0,
+                  "S": 172.0,
+                  "O": 172.0
+                }
+              },
+              "service_r_month": 9927.55,
+              "capacity_r_kva_month": 0,
+              "demand_r_kva_month": 282.74
+            },
+            "Ephraim Mogale Agriculture Three Phase 80A": {
+              "type": "municipal_flat",
+              "energy_c_per_kwh": {
+                "HD": {
+                  "P": 231.3,
+                  "S": 231.3,
+                  "O": 231.3
+                },
+                "LD": {
+                  "P": 231.3,
+                  "S": 231.3,
+                  "O": 231.3
+                }
+              },
+              "export_c_per_kwh": {
+                "HD": {
+                  "P": 172.0,
+                  "S": 172.0,
+                  "O": 172.0
+                },
+                "LD": {
+                  "P": 172.0,
+                  "S": 172.0,
+                  "O": 172.0
+                }
+              },
+              "service_r_month": 2316.04,
+              "capacity_r_kva_month": 0,
+              "demand_r_kva_month": 0.0
+            },
+            "Ephraim Mogale Agriculture Three Phase 150A": {
+              "type": "municipal_flat",
+              "energy_c_per_kwh": {
+                "HD": {
+                  "P": 231.3,
+                  "S": 231.3,
+                  "O": 231.3
+                },
+                "LD": {
+                  "P": 231.3,
+                  "S": 231.3,
+                  "O": 231.3
+                }
+              },
+              "export_c_per_kwh": {
+                "HD": {
+                  "P": 172.0,
+                  "S": 172.0,
+                  "O": 172.0
+                },
+                "LD": {
+                  "P": 172.0,
+                  "S": 172.0,
+                  "O": 172.0
+                }
+              },
+              "service_r_month": 4964.4,
+              "capacity_r_kva_month": 0,
+              "demand_r_kva_month": 0.0
+            },
+            "Ephraim Mogale Agriculture Bulk": {
+              "type": "municipal_flat",
+              "energy_c_per_kwh": {
+                "HD": {
+                  "P": 187.0,
+                  "S": 187.0,
+                  "O": 187.0
+                },
+                "LD": {
+                  "P": 187.0,
+                  "S": 187.0,
+                  "O": 187.0
+                }
+              },
+              "export_c_per_kwh": {
+                "HD": {
+                  "P": 172.0,
+                  "S": 172.0,
+                  "O": 172.0
+                },
+                "LD": {
+                  "P": 172.0,
+                  "S": 172.0,
+                  "O": 172.0
+                }
+              },
+              "service_r_month": 9642.17,
+              "capacity_r_kva_month": 0,
+              "demand_r_kva_month": 258.01
+            },
+            "Ephraim Mogale Church/Schools/Charitable Three Phase 80A": {
+              "type": "municipal_flat",
+              "energy_c_per_kwh": {
+                "HD": {
+                  "P": 276.0,
+                  "S": 276.0,
+                  "O": 276.0
+                },
+                "LD": {
+                  "P": 276.0,
+                  "S": 276.0,
+                  "O": 276.0
+                }
+              },
+              "export_c_per_kwh": {
+                "HD": {
+                  "P": 172.0,
+                  "S": 172.0,
+                  "O": 172.0
+                },
+                "LD": {
+                  "P": 172.0,
+                  "S": 172.0,
+                  "O": 172.0
+                }
+              },
+              "service_r_month": 755.57,
+              "capacity_r_kva_month": 0,
+              "demand_r_kva_month": 0.0
+            }
+          }
+        }
+      ]
     }
   }
 }
