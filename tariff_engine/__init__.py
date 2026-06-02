@@ -14,6 +14,9 @@ numpy. Update tariff_data.json annually when new rates are published.
 from tariff_engine.tou import (
     get_tou_period,
     build_hourly_tou,
+    list_tou_schedules,
+    TOU_SCHEDULES,
+    DEFAULT_SCHEDULE,
     _is_holiday,
     _HD_MONTHS,
     _SA_FIXED_HOLIDAYS,
@@ -36,6 +39,9 @@ __all__ = [
     # TOU schedule
     "get_tou_period",
     "build_hourly_tou",
+    "list_tou_schedules",
+    "TOU_SCHEDULES",
+    "DEFAULT_SCHEDULE",
     # Rate lookup
     "TariffRates",
     "get_tariff_rates",

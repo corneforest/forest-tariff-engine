@@ -23,6 +23,7 @@ from tariff_engine import (
     build_hourly_tou,
     get_tariff_rates,
     list_tariffs,
+    list_tou_schedules,
 )
 
 
@@ -138,6 +139,71 @@ class TestTOUPeriod:
         for m in (1, 2, 3, 4, 5, 9, 10, 11, 12):
             s, _ = get_tou_period(m, 12, 1, False)
             assert s == "LO", f"Month {m} should be LO"
+
+
+# ============================================================================
+# Section 1b - Named TOU schedules (registry)
+# ============================================================================
+
+class TestTOUSchedules:
+    """The schedule registry, the default, and the Stellenbosch 2025/26 clock."""
+
+    def test_eskom_is_default(self):
+        # Omitting schedule must equal explicitly asking for eskom.
+        for m, h, wd in [(7, 7, 1), (3, 18, 1), (4, 9, 6), (7, 18, 7)]:
+            assert get_tou_period(m, h, wd, False) == get_tou_period(m, h, wd, False, "eskom")
+
+    def test_registry_lists_known_schedules(self):
+        names = list_tou_schedules()
+        assert "eskom" in names
+        assert "stellenbosch-2025" in names
+
+    def test_unknown_schedule_raises(self):
+        with pytest.raises(KeyError):
+            get_tou_period(7, 7, 1, False, "does-not-exist")
+
+    # Stellenbosch differs from Eskom on weekday peak bands and Sundays.
+    def test_stellenbosch_differs_from_eskom(self):
+        # Winter weekday 08:00: Eskom peak ends at 08:00 (Standard), Stellenbosch
+        # peak runs to 09:00 (Peak).
+        assert get_tou_period(7, 8, 1, False, "eskom") == ("HI", 2)
+        assert get_tou_period(7, 8, 1, False, "stellenbosch-2025") == ("HI", 1)
+        # Sunday 18:00: Eskom is Standard, Stellenbosch is Off-Peak all Sunday.
+        assert get_tou_period(4, 18, 7, False, "eskom") == ("LO", 2)
+        assert get_tou_period(4, 18, 7, False, "stellenbosch-2025") == ("LO", 3)
+
+    def test_stellenbosch_winter_weekday(self):
+        S = "stellenbosch-2025"
+        assert get_tou_period(7, 6, 1, False, S) == ("HI", 1)   # peak start
+        assert get_tou_period(7, 9, 1, False, S) == ("HI", 2)   # peak ends 09:00
+        assert get_tou_period(7, 17, 1, False, S) == ("HI", 1)  # evening peak
+        assert get_tou_period(7, 19, 1, False, S) == ("HI", 2)  # peak ends 19:00
+        assert get_tou_period(7, 0, 1, False, S) == ("HI", 3)   # off-peak
+
+    def test_stellenbosch_summer_weekday(self):
+        S = "stellenbosch-2025"
+        assert get_tou_period(3, 7, 1, False, S) == ("LO", 1)   # peak start
+        assert get_tou_period(3, 6, 1, False, S) == ("LO", 2)   # 06:00 standard
+        assert get_tou_period(3, 10, 1, False, S) == ("LO", 2)  # peak ends 10:00
+        assert get_tou_period(3, 18, 1, False, S) == ("LO", 1)  # evening peak
+        assert get_tou_period(3, 20, 1, False, S) == ("LO", 2)  # peak ends 20:00
+
+    def test_stellenbosch_saturday_and_sunday(self):
+        S = "stellenbosch-2025"
+        assert get_tou_period(3, 7, 6, False, S) == ("LO", 2)   # Sat standard
+        assert get_tou_period(3, 12, 6, False, S) == ("LO", 3)  # Sat off-peak gap
+        assert get_tou_period(3, 18, 6, False, S) == ("LO", 2)  # Sat evening standard
+        assert get_tou_period(3, 12, 7, False, S) == ("LO", 3)  # Sunday all off-peak
+        assert get_tou_period(7, 18, 7, False, S) == ("HI", 3)  # Sunday off-peak
+
+    def test_stellenbosch_no_weekday_peak_outside_bands(self):
+        # No peak at 12:00 on a Stellenbosch weekday in either season.
+        assert get_tou_period(7, 12, 1, False, "stellenbosch-2025")[1] != 1
+        assert get_tou_period(3, 12, 1, False, "stellenbosch-2025")[1] != 1
+
+    def test_tariff_carries_schedule(self):
+        assert get_tariff_rates("Stellenbosch TOU LV").tou_schedule == "stellenbosch-2025"
+        assert get_tariff_rates("Eskom Miniflex").tou_schedule == "eskom"
 
 
 # ============================================================================

@@ -199,6 +199,7 @@ def _resolve_from_flat_td(name: str, td: dict) -> dict:
             "capacity_r_kva_month": t["capacity_r_kva_month"],
             "service_charge_pa": t["service_charge_pa"],
             "demand_charge_kva": t.get("demand_charge_kva", 0.0),
+            "tou_schedule": t.get("tou_schedule", "eskom"),
         }
 
     # ── Municipal / provider tariffs ─────────────────────────────────────────
@@ -214,6 +215,7 @@ def _resolve_from_flat_td(name: str, td: dict) -> dict:
                 "capacity_charge_kva": t.get("capacity_r_kva_month", 0.0) or 0.0,
                 "demand_charge_kva": t.get("demand_r_kva_month", 0.0) or 0.0,
                 "sseg_options": t.get("sseg_options"),
+                "tou_schedule": t.get("tou_schedule", "eskom"),
             }
 
     # Not found
@@ -263,6 +265,7 @@ class TariffRates:
     service_charge_pa: float = 0.0      # R/year
     capacity_charge_kva: float = 0.0   # R/kVA/month (NMD)
     demand_charge_kva: float = 0.0     # R/kVA/month (actual max demand)
+    tou_schedule: str = "eskom"        # name of the TOU schedule (see tou.py)
 
     def rate(self, season: str, tou_period: int) -> float:
         """Return the import rate (R/kWh) for a given season and TOU period."""
@@ -334,6 +337,7 @@ def _resolve_tariff_rates(
         service_charge_pa   = data.get("service_charge_pa", 0.0),
         capacity_charge_kva = cap,
         demand_charge_kva   = data.get("demand_charge_kva", 0.0),
+        tou_schedule        = data.get("tou_schedule", "eskom"),
     )
 
 

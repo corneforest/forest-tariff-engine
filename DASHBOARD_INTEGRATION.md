@@ -72,7 +72,7 @@ print('OK', len(list_tariffs()), 'tariffs')
 "
 ```
 
-Expected output: `OK 100 tariffs` (or whatever the latest count is).
+Expected output: `OK 101 tariffs` (or whatever the latest count is).
 
 ### 4. Delete the old folder
 
@@ -157,15 +157,31 @@ Everything below is callable as `from tariff_engine import X` (or via the submod
 
 | Function | Purpose | Used by |
 |----------|---------|---------|
-| `get_tou_period(month, hour, weekday_iso, is_holiday) -> (season, tou_period)` | Classify a single hour | both |
-| `build_hourly_tou(year) -> dict` | Build 8760-hour TOU arrays | both |
+| `get_tou_period(month, hour, weekday_iso, is_holiday, schedule="eskom") -> (season, tou_period)` | Classify a single hour | both |
+| `build_hourly_tou(year, schedule="eskom") -> dict` | Build 8760-hour TOU arrays | both |
+| `list_tou_schedules() -> list[str]` | Names of available TOU schedules | both |
 | `get_tariff_rates(name, zone=None, voltage=None, sseg_option=None) -> TariffRates` | Latest rates for a tariff | both |
 | `get_tariff_rates_for_date(name, date, zone=None, voltage=None) -> TariffRates` | Rates active on a specific past date | Dashboard |
 | `calculate_hourly_savings(...)` | Hourly ZAR savings from plant data | Dashboard |
 | `list_tariffs() -> list[str]` | All available tariff names | both |
-| `TariffRates` (dataclass) | Container with `hd_peak`, `ld_off_peak`, `service_charge_pa`, etc. | both |
+| `TariffRates` (dataclass) | Container with `hd_peak`, `ld_off_peak`, `service_charge_pa`, `tou_schedule`, etc. | both |
 
 Schema versioning lives in `rates.py`. Currently on `schema_version 2` which supports historical lookups.
+
+### TOU schedules (added v1.5.0)
+
+Tariffs can now carry their own TOU clock (which hours are Peak/Standard/Off-Peak
+and which months are High/Low season). Each tariff names a schedule via
+`tou_schedule` in `tariff_data.json`; `TariffRates.tou_schedule` exposes it.
+Both `get_tou_period` and `build_hourly_tou` take an optional `schedule`
+argument that **defaults to `"eskom"`**, so existing code is unaffected.
+
+- **Dashboard:** no change required. `calculate_hourly_savings()` reads
+  `tariff_rates.tou_schedule` and applies the correct clock automatically.
+- **Solar Model:** when you build the hourly TOU array, pass the tariff's
+  schedule: `build_hourly_tou(year, schedule=rates.tou_schedule)`. If you keep
+  calling `build_hourly_tou(year)`, non-Eskom tariffs (e.g. Stellenbosch TOU)
+  will be classified on the Eskom clock and savings will be wrong.
 
 ---
 

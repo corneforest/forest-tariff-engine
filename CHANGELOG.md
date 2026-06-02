@@ -10,6 +10,37 @@ The version is authored in `pyproject.toml` and released as git tag `v{version}`
 [Semantic Versioning](https://semver.org/): PATCH = data fix on existing
 tariffs, MINOR = new tariffs/providers, MAJOR = schema or API break.
 
+## [1.5.0] - 2026-06-02
+
+### Added
+- **Per-tariff TOU schedules.** TOU clocks (Peak/Standard/Off-Peak hours and
+  High/Low season months) are now data-driven named entries in
+  `tou.TOU_SCHEDULES`. A tariff selects one via the `tou_schedule` key in
+  `tariff_data.json` (absent = `"eskom"`). New public helper
+  `list_tou_schedules()`; `get_tou_period()` and `build_hourly_tou()` gain an
+  optional `schedule` argument defaulting to `"eskom"`; `TariffRates` gains a
+  `tou_schedule` field.
+- **`stellenbosch-2025` TOU schedule** (Stellenbosch Municipality 2025/26 clock:
+  Winter Jun-Aug, Summer Sep-May, Sunday off-peak all day). Applied to
+  `Stellenbosch TOU LV`, `Stellenbosch TOU MV`, and the new IND1 tariff.
+  Schedules are year-scoped so a future revision is added as a new entry without
+  breaking historical lookups.
+- **Stellenbosch Large Power LV >80A (IND1)** tariff (2025/26, ex VAT): flat
+  import 180.34 c/kWh, TOU export (HD 616.20/186.69/101.38, LD
+  201.00/138.31/87.75), service R3 527.55/month, NMD capacity R82.52/kVA, max
+  demand R458.28/kVA.
+
+### Consumer action required
+- **Solar Dashboard:** none. `calculate_hourly_savings()` reads
+  `tariff_rates.tou_schedule` automatically.
+- **Solar Model:** pass the schedule when building the hourly TOU array:
+  `build_hourly_tou(year, schedule=rates.tou_schedule)`. Otherwise non-Eskom
+  TOU tariffs are classified on the Eskom clock.
+
+### Changed
+- Eskom TOU schedule refactored into the registry; behaviour is byte-identical
+  (verified across all hour/day/season combinations). Total tariff count now 101.
+
 ## [1.4.0] - 2026-06-02
 
 ### Added

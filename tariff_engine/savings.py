@@ -98,7 +98,10 @@ def calculate_hourly_savings(
 
     for i in range(n):
         dt = start + _dt.timedelta(hours=i)
-        season, tou_period = get_tou_period(dt.month, dt.hour, dt.isoweekday(), is_holiday=False)
+        season, tou_period = get_tou_period(
+            dt.month, dt.hour, dt.isoweekday(), is_holiday=False,
+            schedule=tariff_rates.tou_schedule,
+        )
         rate = tariff_rates.rate(season, tou_period)
 
         grid_actual = max(0.0, float(grid_import_actual_kwh[i]))

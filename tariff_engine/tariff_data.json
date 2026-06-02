@@ -3470,7 +3470,8 @@
               },
               "service_r_month": 6461.86,
               "capacity_r_kva_month": 87.61,
-              "demand_r_kva_month": 87.61
+              "demand_r_kva_month": 87.61,
+              "tou_schedule": "stellenbosch-2025"
             },
             "Stellenbosch TOU MV": {
               "type": "municipal_tou",
@@ -3500,7 +3501,39 @@
               },
               "service_r_month": 12231.45,
               "capacity_r_kva_month": 84.66,
-              "demand_r_kva_month": 89.04
+              "demand_r_kva_month": 89.04,
+              "tou_schedule": "stellenbosch-2025"
+            },
+            "Stellenbosch Large Power LV >80A (IND1)": {
+              "type": "municipal_flat",
+              "energy_c_per_kwh": {
+                "HD": {
+                  "P": 180.34,
+                  "S": 180.34,
+                  "O": 180.34
+                },
+                "LD": {
+                  "P": 180.34,
+                  "S": 180.34,
+                  "O": 180.34
+                }
+              },
+              "export_c_per_kwh": {
+                "HD": {
+                  "P": 616.2,
+                  "S": 186.69,
+                  "O": 101.38
+                },
+                "LD": {
+                  "P": 201.0,
+                  "S": 138.31,
+                  "O": 87.75
+                }
+              },
+              "service_r_month": 3527.55,
+              "capacity_r_kva_month": 82.52,
+              "demand_r_kva_month": 458.28,
+              "tou_schedule": "stellenbosch-2025"
             }
           }
         }
