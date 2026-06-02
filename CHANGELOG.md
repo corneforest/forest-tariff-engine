@@ -10,6 +10,21 @@ The version is authored in `pyproject.toml` and released as git tag `v{version}`
 [Semantic Versioning](https://semver.org/): PATCH = data fix on existing
 tariffs, MINOR = new tariffs/providers, MAJOR = schema or API break.
 
+## [1.4.0] - 2026-06-02
+
+### Added
+- **Eskom Landrate 2** and **Eskom Landrate 3** (three-phase, non-local
+  authority) for both rate years: 2025/26 (effective 2025-04-01) and 2026/27
+  (effective 2026-04-01). Source: Eskom Schedule of Standard Prices, all ex VAT.
+  - Flat (non-TOU) tariff at supply voltage < 500 V; all-in energy rate (active +
+    ancillary + network demand) = 287.00 c/kWh (2025/26), 310.41 c/kWh (2026/27),
+    identical for Landrate 2 and 3.
+  - Fixed R/POD/day charges (network capacity + service & administration +
+    generation capacity) summed and annualised x365 into `service_charge_pa`:
+    L2 R46 303.90 / L3 R69 466.80 (2025/26); L2 R51 205.85 / L3 R77 201.15 (2026/27).
+  - No export tariff (grid-tied generation mandates a TOU tariff), so no export
+    rates are returned. Three-phase NMD: L2 = 50 kVA, L3 = 100 kVA.
+
 ## [1.3.0] - 2026-06-01
 
 ### Added

@@ -481,6 +481,106 @@
             },
             "service_charge_pa": 8449.75,
             "demand_charge_kva": 0.0
+          },
+          "Eskom Landrate 2": {
+            "zones": [
+              "Non-local Authority"
+            ],
+            "voltages": [
+              "<500V"
+            ],
+            "default_zone": "Non-local Authority",
+            "default_voltage": "<500V",
+            "energy_c_per_kwh": {
+              "Non-local Authority": {
+                "<500V": {
+                  "HD": {
+                    "P": 224.93,
+                    "S": 224.93,
+                    "O": 224.93
+                  },
+                  "LD": {
+                    "P": 224.93,
+                    "S": 224.93,
+                    "O": 224.93
+                  }
+                }
+              }
+            },
+            "levies_c_per_kwh": {
+              "legacy_c_per_kwh": {
+                "<500V": 0
+              },
+              "ancillary_c_per_kwh": {
+                "<500V": 0.41
+              },
+              "network_demand_c_per_kwh": {
+                "<500V": {
+                  "P": 61.66,
+                  "S": 61.66,
+                  "O": 61.66
+                }
+              },
+              "electrification_c_per_kwh": 0,
+              "affordability_c_per_kwh": 0
+            },
+            "capacity_r_kva_month": {
+              "Non-local Authority": {
+                "<500V": 0
+              }
+            },
+            "service_charge_pa": 46303.9,
+            "demand_charge_kva": 0.0
+          },
+          "Eskom Landrate 3": {
+            "zones": [
+              "Non-local Authority"
+            ],
+            "voltages": [
+              "<500V"
+            ],
+            "default_zone": "Non-local Authority",
+            "default_voltage": "<500V",
+            "energy_c_per_kwh": {
+              "Non-local Authority": {
+                "<500V": {
+                  "HD": {
+                    "P": 224.93,
+                    "S": 224.93,
+                    "O": 224.93
+                  },
+                  "LD": {
+                    "P": 224.93,
+                    "S": 224.93,
+                    "O": 224.93
+                  }
+                }
+              }
+            },
+            "levies_c_per_kwh": {
+              "legacy_c_per_kwh": {
+                "<500V": 0
+              },
+              "ancillary_c_per_kwh": {
+                "<500V": 0.41
+              },
+              "network_demand_c_per_kwh": {
+                "<500V": {
+                  "P": 61.66,
+                  "S": 61.66,
+                  "O": 61.66
+                }
+              },
+              "electrification_c_per_kwh": 0,
+              "affordability_c_per_kwh": 0
+            },
+            "capacity_r_kva_month": {
+              "Non-local Authority": {
+                "<500V": 0
+              }
+            },
+            "service_charge_pa": 69466.8,
+            "demand_charge_kva": 0.0
           }
         }
       },
@@ -1780,6 +1880,106 @@
               }
             },
             "service_charge_pa": 9190.7,
+            "demand_charge_kva": 0.0
+          },
+          "Eskom Landrate 2": {
+            "zones": [
+              "Non-local Authority"
+            ],
+            "voltages": [
+              "<500V"
+            ],
+            "default_zone": "Non-local Authority",
+            "default_voltage": "<500V",
+            "energy_c_per_kwh": {
+              "Non-local Authority": {
+                "<500V": {
+                  "HD": {
+                    "P": 242.9,
+                    "S": 242.9,
+                    "O": 242.9
+                  },
+                  "LD": {
+                    "P": 242.9,
+                    "S": 242.9,
+                    "O": 242.9
+                  }
+                }
+              }
+            },
+            "levies_c_per_kwh": {
+              "legacy_c_per_kwh": {
+                "<500V": 0
+              },
+              "ancillary_c_per_kwh": {
+                "<500V": 0.45
+              },
+              "network_demand_c_per_kwh": {
+                "<500V": {
+                  "P": 67.06,
+                  "S": 67.06,
+                  "O": 67.06
+                }
+              },
+              "electrification_c_per_kwh": 0,
+              "affordability_c_per_kwh": 0
+            },
+            "capacity_r_kva_month": {
+              "Non-local Authority": {
+                "<500V": 0
+              }
+            },
+            "service_charge_pa": 51205.85,
+            "demand_charge_kva": 0.0
+          },
+          "Eskom Landrate 3": {
+            "zones": [
+              "Non-local Authority"
+            ],
+            "voltages": [
+              "<500V"
+            ],
+            "default_zone": "Non-local Authority",
+            "default_voltage": "<500V",
+            "energy_c_per_kwh": {
+              "Non-local Authority": {
+                "<500V": {
+                  "HD": {
+                    "P": 242.9,
+                    "S": 242.9,
+                    "O": 242.9
+                  },
+                  "LD": {
+                    "P": 242.9,
+                    "S": 242.9,
+                    "O": 242.9
+                  }
+                }
+              }
+            },
+            "levies_c_per_kwh": {
+              "legacy_c_per_kwh": {
+                "<500V": 0
+              },
+              "ancillary_c_per_kwh": {
+                "<500V": 0.45
+              },
+              "network_demand_c_per_kwh": {
+                "<500V": {
+                  "P": 67.06,
+                  "S": 67.06,
+                  "O": 67.06
+                }
+              },
+              "electrification_c_per_kwh": 0,
+              "affordability_c_per_kwh": 0
+            },
+            "capacity_r_kva_month": {
+              "Non-local Authority": {
+                "<500V": 0
+              }
+            },
+            "service_charge_pa": 77201.15,
             "demand_charge_kva": 0.0
           }
         },
