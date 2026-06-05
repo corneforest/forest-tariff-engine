@@ -48,7 +48,8 @@ DEFAULT_SCHEDULE = "eskom"
 # Registry of named TOU schedules. Add a utility's schedule here as data.
 TOU_SCHEDULES: dict[str, dict] = {
     # Eskom national TOU clock (Megaflex / Miniflex / Ruraflex). High Demand =
-    # Jun/Jul/Aug. Weekend bands are season-independent for Eskom.
+    # Jun/Jul/Aug. Weekend Standard window shifts by an hour between seasons:
+    # Winter (High Demand) 17:00-19:00, Summer (Low Demand) 18:00-20:00.
     "eskom": {
         "hd_months": [6, 7, 8],
         "weekday": {
@@ -57,11 +58,11 @@ TOU_SCHEDULES: dict[str, dict] = {
         },
         "saturday": {
             "HI": {"peak": [], "standard": [[7, 12], [17, 19]]},
-            "LO": {"peak": [], "standard": [[7, 12], [17, 19]]},
+            "LO": {"peak": [], "standard": [[7, 12], [18, 20]]},
         },
         "sunday": {
             "HI": {"peak": [], "standard": [[17, 19]]},
-            "LO": {"peak": [], "standard": [[17, 19]]},
+            "LO": {"peak": [], "standard": [[18, 20]]},
         },
     },
     # Stellenbosch Municipality TOU clock for the 2025/26 rate year. High Demand

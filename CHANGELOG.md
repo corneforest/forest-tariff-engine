@@ -10,6 +10,30 @@ The version is authored in `pyproject.toml` and released as git tag `v{version}`
 [Semantic Versioning](https://semver.org/): PATCH = data fix on existing
 tariffs, MINOR = new tariffs/providers, MAJOR = schema or API break.
 
+## [1.6.0] - 2026-06-05
+
+### Added
+- **Eskom Businessrate 2 and 3** (three-phase, non-local authority) for both
+  rate years 2025/26 (2025-04-01) and 2026/27 (2026-04-01). Flat tariff;
+  all-in energy = energy + ancillary + network demand + electrification (244.82
+  c/kWh in 2025/26, 264.53 in 2026/27). R/POD/day fixed charges annualised x365
+  into service_charge_pa. No export. Total tariff count 101 -> 103.
+- **City of Ekurhuleni 2026/27** version block (effective 2026-07-01), all 12
+  tariffs. **Provisional** (draft schedule v.2026.03.11, pending Council
+  approval). +9.01% on all charges except Tariff J and every export credit,
+  which rise +8.76% (Eskom Municflex-linked).
+- **City of Tshwane 2026/27** version block (effective 2026-07-01), all 6
+  tariffs. **Provisional**: uniform +8.8% on every rate and charge.
+
+### Fixed
+- **Eskom TOU schedule weekend correction (behavioural — affects all
+  Eskom-clock tariffs).** The summer (Low Demand) Saturday/Sunday Standard
+  window was corrected from 17:00-19:00 to **18:00-20:00**; winter (High Demand)
+  remains 17:00-19:00. This changes Standard vs Off-Peak classification for two
+  summer-weekend hours and therefore TOU savings results for every tariff using
+  the `eskom` schedule (Eskom + most municipalities). CoE TOU tariffs use the
+  corrected `eskom` clock (no separate CoE schedule needed).
+
 ## [1.5.0] - 2026-06-02
 
 ### Added

@@ -94,8 +94,12 @@ class TestTOUPeriod:
     def test_saturday_standard_morning(self):
         assert get_tou_period(4, 9, 6, False) == ("LO", 2)
 
-    def test_saturday_standard_evening(self):
-        assert get_tou_period(4, 17, 6, False) == ("LO", 2)
+    def test_saturday_summer_evening_standard(self):
+        # Summer (Low Demand) weekend Standard window is 18:00-20:00.
+        assert get_tou_period(4, 17, 6, False) == ("LO", 3)   # 17:00 now off-peak
+        assert get_tou_period(4, 18, 6, False) == ("LO", 2)   # 18:00 standard
+        assert get_tou_period(4, 19, 6, False) == ("LO", 2)   # 19:00 standard
+        assert get_tou_period(4, 20, 6, False) == ("LO", 3)   # 20:00 off-peak
 
     def test_saturday_off_peak_afternoon(self):
         assert get_tou_period(4, 14, 6, False) == ("LO", 3)
@@ -106,15 +110,25 @@ class TestTOUPeriod:
     def test_saturday_in_hi_season(self):
         assert get_tou_period(7, 9, 6, False) == ("HI", 2)
 
-    # Sunday
-    def test_sunday_standard(self):
-        assert get_tou_period(4, 17, 7, False) == ("LO", 2)
+    # Sunday (summer Standard window 18:00-20:00)
+    def test_sunday_summer_17_off_peak(self):
+        assert get_tou_period(4, 17, 7, False) == ("LO", 3)
 
     def test_sunday_standard_18(self):
         assert get_tou_period(4, 18, 7, False) == ("LO", 2)
 
     def test_sunday_standard_boundary_end(self):
-        assert get_tou_period(4, 19, 7, False) == ("LO", 3)
+        assert get_tou_period(4, 19, 7, False) == ("LO", 2)
+
+    def test_sunday_summer_20_off_peak(self):
+        assert get_tou_period(4, 20, 7, False) == ("LO", 3)
+
+    # Winter (High Demand) weekend Standard window stays 17:00-19:00.
+    def test_weekend_winter_standard_17_19(self):
+        assert get_tou_period(7, 17, 6, False) == ("HI", 2)   # Sat 17:00 standard
+        assert get_tou_period(7, 19, 6, False) == ("HI", 3)   # Sat 19:00 off-peak
+        assert get_tou_period(7, 17, 7, False) == ("HI", 2)   # Sun 17:00 standard
+        assert get_tou_period(7, 19, 7, False) == ("HI", 3)   # Sun 19:00 off-peak
 
     def test_sunday_off_peak_morning(self):
         assert get_tou_period(4, 10, 7, False) == ("LO", 3)
