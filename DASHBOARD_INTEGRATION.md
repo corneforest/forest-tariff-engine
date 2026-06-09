@@ -72,7 +72,7 @@ print('OK', len(list_tariffs()), 'tariffs')
 "
 ```
 
-Expected output: `OK 103 tariffs` (or whatever the latest count is).
+Expected output: `OK 104 tariffs` (or whatever the latest count is).
 
 ### 4. Delete the old folder
 

@@ -10,6 +10,13 @@ The version is authored in `pyproject.toml` and released as git tag `v{version}`
 [Semantic Versioning](https://semver.org/): PATCH = data fix on existing
 tariffs, MINOR = new tariffs/providers, MAJOR = schema or API break.
 
+## [1.7.0] - 2026-06-09
+
+### Added
+- **Ephraim Mogale Church/Schools/Charitable Single 80A** (2025/26, ex VAT):
+  flat energy 253.47 c/kWh, basic R377.68/month, export = Energy Feedback
+  172.00 c/kWh (matching the other Ephraim Mogale tariffs). Total count 103 -> 104.
+
 ## [1.6.0] - 2026-06-05
 
 ### Added

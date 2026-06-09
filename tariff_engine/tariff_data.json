@@ -5379,6 +5379,36 @@
               "service_r_month": 755.57,
               "capacity_r_kva_month": 0,
               "demand_r_kva_month": 0.0
+            },
+            "Ephraim Mogale Church/Schools/Charitable Single 80A": {
+              "type": "municipal_flat",
+              "energy_c_per_kwh": {
+                "HD": {
+                  "P": 253.47,
+                  "S": 253.47,
+                  "O": 253.47
+                },
+                "LD": {
+                  "P": 253.47,
+                  "S": 253.47,
+                  "O": 253.47
+                }
+              },
+              "export_c_per_kwh": {
+                "HD": {
+                  "P": 172.0,
+                  "S": 172.0,
+                  "O": 172.0
+                },
+                "LD": {
+                  "P": 172.0,
+                  "S": 172.0,
+                  "O": 172.0
+                }
+              },
+              "service_r_month": 377.68,
+              "capacity_r_kva_month": 0,
+              "demand_r_kva_month": 0
             }
           }
         }
