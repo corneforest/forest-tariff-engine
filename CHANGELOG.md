@@ -10,6 +10,24 @@ The version is authored in `pyproject.toml` and released as git tag `v{version}`
 [Semantic Versioning](https://semver.org/): PATCH = data fix on existing
 tariffs, MINOR = new tariffs/providers, MAJOR = schema or API break.
 
+## [1.7.1] - 2026-06-15
+
+### Fixed
+- **Eskom Miniflex and Ruraflex 2025/26 active energy charge (data fix, raises
+  all-in import rates).** The 2025/26 `energy_c_per_kwh` values were stored as
+  the booklet "Active energy charge" MINUS all per-kWh levies, so the engine
+  (which re-adds legacy + ancillary + network demand + electrification +
+  affordability) only reproduced the active energy charge and never added the
+  levies on top. Energy values are now set to the booklet active energy charge,
+  so all-in = active energy + levies, matching the 2025/26 PDFs and the 2026/27
+  blocks. Effect: +71.73 c/kWh (Ruraflex <500V) and +62.52/+32.82 c/kWh
+  (Miniflex <500V peak-standard / off-peak) on the all-in import rate; smaller
+  uplifts on higher-voltage bands. Example, >900km <500V HD Peak: Ruraflex
+  711.73 -> 783.46 c/kWh, Miniflex 705.13 -> 767.65 c/kWh. 144 energy cells
+  updated across all zones and voltages. Levies, capacity charges, service
+  charges and 2026/27 rates are unchanged. Script:
+  `scripts/fix_eskom_2025_energy_levies.py`.
+
 ## [1.7.0] - 2026-06-09
 
 ### Added
