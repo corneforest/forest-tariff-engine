@@ -10,6 +10,34 @@ The version is authored in `pyproject.toml` and released as git tag `v{version}`
 [Semantic Versioning](https://semver.org/): PATCH = data fix on existing
 tariffs, MINOR = new tariffs/providers, MAJOR = schema or API break.
 
+## [1.8.0] - 2026-06-16
+
+### Added
+- **City of Johannesburg (City Power) Large Consumer "Demand" tariffs, LV and
+  MV (2025/26).** Three-part flat tariff for large consumers: service + network
+  fixed charge, monthly demand charge (R/kVA), and a flat seasonal energy charge
+  (no time-of-use). Source: CoJ Schedule of Tariffs July 2025 - June 2026,
+  section 4 (Large Consumers), "Large Customer Demand" segment, ex VAT. Only LV
+  and MV exist for this flat tariff (the HV band is TOU only), matching the
+  official schedule.
+  - `CoJ Large Consumer Demand LV`: energy 312.20 c/kWh winter / 267.41 c/kWh
+    summer, demand 423.10 R/kVA/month, fixed 3541.57 R/month.
+  - `CoJ Large Consumer Demand MV`: energy 294.83 c/kWh winter / 250.02 c/kWh
+    summer, demand 395.48 R/kVA/month, fixed 10763.13 R/month.
+  - Conventions match the existing CoJ Industrial TOU entries: service + network
+    summed into `service_r_month`; energy carries the +6 c/kWh Network Surcharge
+    that the booklet lists separately; season split follows the default schedule
+    (winter Jun-Aug, summer Sep-May). Export = 90.05 c/kWh (Business and Large
+    Power User embedded generator energy charge), applied flat.
+  - Script: `scripts/add_coj_large_consumer_2025.py`.
+
+### Fixed
+- **City of Johannesburg Industrial TOU export rate (2025/26): 89.79 -> 90.05
+  c/kWh** on all three bands (LV, MV, HV). The stored value was the prior-year
+  embedded generator rate; the 2025/26 schedule (ITEM_03C_ANNEXURE.pdf, page 24)
+  lists the Business and Large Power User Embedded Generator Energy Charge as
+  90.05 c/kWh. Applied flat across both seasons and all TOU periods (18 cells).
+
 ## [1.7.2] - 2026-06-16
 
 ### Fixed
