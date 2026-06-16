@@ -197,6 +197,8 @@ def _resolve_from_flat_td(name: str, td: dict) -> dict:
             "import_c_per_kwh": imp,
             "export_c_per_kwh": exp,
             "capacity_r_kva_month": t["capacity_r_kva_month"],
+            "generation_capacity_r_kva_month": t.get("generation_capacity_r_kva_month"),
+            "network_capacity_r_kva_month": t.get("network_capacity_r_kva_month"),
             "service_charge_pa": t["service_charge_pa"],
             "demand_charge_kva": t.get("demand_charge_kva", 0.0),
             "tou_schedule": t.get("tou_schedule", "eskom"),
@@ -263,7 +265,9 @@ class TariffRates:
     export_ld_standard: Optional[float] = None
     export_ld_off_peak: Optional[float] = None
     service_charge_pa: float = 0.0      # R/year
-    capacity_charge_kva: float = 0.0   # R/kVA/month (NMD)
+    capacity_charge_kva: float = 0.0   # R/kVA/month (NMD) - combined generation + network
+    generation_capacity_charge_kva: float = 0.0  # R/kVA/month (NMD) - generation component
+    network_capacity_charge_kva: float = 0.0      # R/kVA/month (NMD) - network component
     demand_charge_kva: float = 0.0     # R/kVA/month (actual max demand)
     tou_schedule: str = "eskom"        # name of the TOU schedule (see tou.py)
 
@@ -299,10 +303,22 @@ def _resolve_tariff_rates(
         exp_by_zone = data.get("export_c_per_kwh") or {}
         exp = exp_by_zone.get(z, {}).get(v)
         cap = data["capacity_r_kva_month"][z][v]
+        gen_tbl = data.get("generation_capacity_r_kva_month")
+        net_tbl = data.get("network_capacity_r_kva_month")
+        if gen_tbl and net_tbl:
+            gen_cap = gen_tbl[z][v]
+            net_cap = net_tbl[z][v]
+        else:
+            # No split available: treat the whole capacity charge as network.
+            gen_cap = 0.0
+            net_cap = cap
     else:
         imp = data["import_c_per_kwh"]
         exp = data.get("export_c_per_kwh")
         cap = data.get("capacity_charge_kva", 0.0)
+        # Municipal tariffs have no generation capacity charge.
+        gen_cap = 0.0
+        net_cap = cap
 
     # CoCT SSEG export override
     if sseg_option and "sseg_options" in data:
@@ -336,6 +352,8 @@ def _resolve_tariff_rates(
         export_ld_off_peak  = c(exp["LD"]["O"]) if exp else None,
         service_charge_pa   = data.get("service_charge_pa", 0.0),
         capacity_charge_kva = cap,
+        generation_capacity_charge_kva = gen_cap,
+        network_capacity_charge_kva    = net_cap,
         demand_charge_kva   = data.get("demand_charge_kva", 0.0),
         tou_schedule        = data.get("tou_schedule", "eskom"),
     )

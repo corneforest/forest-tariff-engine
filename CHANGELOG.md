@@ -10,6 +10,29 @@ The version is authored in `pyproject.toml` and released as git tag `v{version}`
 [Semantic Versioning](https://semver.org/): PATCH = data fix on existing
 tariffs, MINOR = new tariffs/providers, MAJOR = schema or API break.
 
+## [1.9.0] - 2026-06-16
+
+### Added
+- **Split capacity charge into separate generation and network components
+  (Eskom Miniflex and Ruraflex, both rate years).** `TariffRates` now exposes
+  `generation_capacity_charge_kva` and `network_capacity_charge_kva` (R/kVA/month)
+  alongside the existing combined `capacity_charge_kva`, which is unchanged and
+  still equals generation + network. In the data, `generation_capacity_r_kva_month`
+  and `network_capacity_r_kva_month` are added next to `capacity_r_kva_month`.
+  The generation capacity charge is constant per voltage (Miniflex: 3.49/8.09/6.12/7.02
+  in 2025/26, 5.29/12.27/9.28/10.65 in 2026/27; Ruraflex: 3.34/5.03 then 5.07/7.63),
+  verified against the Eskom booklets and the 1 April 2026 schedule. Backward
+  compatible: tariffs without a split (all others, including municipal) report
+  generation = 0 and network = the full capacity charge. Script:
+  `scripts/split_eskom_capacity.py`.
+
+### Known gaps
+- **Eskom Megaflex 2026/27 is not yet split and is under-modelled.** Its saved
+  capacity (42.66 R/kVA/month, <500V) is only the distribution network capacity
+  charge; the generation capacity (5.29), transmission network (~11.92) and a
+  distribution network demand charge (52.65 R/kVA/month on peak demand) are not
+  yet captured. To be addressed in a separate change.
+
 ## [1.8.0] - 2026-06-16
 
 ### Added

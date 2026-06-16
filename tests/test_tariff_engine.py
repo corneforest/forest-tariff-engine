@@ -380,3 +380,38 @@ class TestFixedChargeFormula:
         t = get_tariff_rates("Eskom Miniflex")
         annual = t.service_charge_pa + t.capacity_charge_kva * 0 * 12 + t.demand_charge_kva * 0 * 12
         assert math.isclose(annual, t.service_charge_pa, rel_tol=1e-5)
+
+
+# ============================================================================
+# Section 5 - Capacity charge split (generation + network)
+# ============================================================================
+
+class TestCapacitySplit:
+    """The capacity charge is exposed split into generation + network, and the
+    two must always sum back to the combined capacity_charge_kva."""
+
+    def test_miniflex_2026_split(self):
+        t = get_tariff_rates("Eskom Miniflex")  # current date -> 2026/27, >900km <500V
+        assert math.isclose(t.generation_capacity_charge_kva, 5.29, rel_tol=1e-4)
+        assert math.isclose(t.network_capacity_charge_kva, 54.58, rel_tol=1e-4)
+
+    def test_ruraflex_2026_split(self):
+        t = get_tariff_rates("Eskom Ruraflex")
+        assert math.isclose(t.generation_capacity_charge_kva, 5.07, rel_tol=1e-4)
+        assert math.isclose(t.network_capacity_charge_kva, 56.95, rel_tol=1e-4)
+
+    @pytest.mark.parametrize("name", ["Eskom Miniflex", "Eskom Ruraflex"])
+    def test_split_sums_to_combined(self, name):
+        t = get_tariff_rates(name)
+        assert math.isclose(
+            t.generation_capacity_charge_kva + t.network_capacity_charge_kva,
+            t.capacity_charge_kva,
+            rel_tol=1e-6,
+        )
+
+    def test_unsplit_tariff_falls_back_to_network(self):
+        # A tariff without a generation/network split: generation is 0 and the
+        # whole capacity charge is reported as network.
+        t = get_tariff_rates("Eskom Megaflex")
+        assert t.generation_capacity_charge_kva == 0.0
+        assert math.isclose(t.network_capacity_charge_kva, t.capacity_charge_kva, rel_tol=1e-9)
