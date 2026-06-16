@@ -319,7 +319,7 @@ class TestTariffRates:
 
     def test_miniflex_capacity_charge(self):
         t = get_tariff_rates("Eskom Miniflex")
-        assert math.isclose(t.capacity_charge_kva, 54.58, rel_tol=1e-4)
+        assert math.isclose(t.capacity_charge_kva, 59.87, rel_tol=1e-4)
 
     def test_miniflex_export_hd_peak(self):
         t = get_tariff_rates("Eskom Miniflex")
@@ -368,13 +368,13 @@ class TestFixedChargeFormula:
     def test_miniflex_nmd_3000(self):
         t = get_tariff_rates("Eskom Miniflex")
         annual = t.service_charge_pa + t.capacity_charge_kva * 3000 * 12 + t.demand_charge_kva * 3000 * 12
-        expected = 5453.10 + 54.58 * 3000 * 12
+        expected = 5453.10 + 59.87 * 3000 * 12
         assert math.isclose(annual, expected, rel_tol=1e-5)
 
     def test_miniflex_nmd_3000_exact(self):
         t = get_tariff_rates("Eskom Miniflex")
         annual = t.service_charge_pa + t.capacity_charge_kva * 3000 * 12 + t.demand_charge_kva * 3000 * 12
-        assert math.isclose(annual, 1_970_333.10, rel_tol=1e-5)
+        assert math.isclose(annual, 2_160_773.10, rel_tol=1e-5)
 
     def test_zero_nmd(self):
         t = get_tariff_rates("Eskom Miniflex")

@@ -10,6 +10,21 @@ The version is authored in `pyproject.toml` and released as git tag `v{version}`
 [Semantic Versioning](https://semver.org/): PATCH = data fix on existing
 tariffs, MINOR = new tariffs/providers, MAJOR = schema or API break.
 
+## [1.7.2] - 2026-06-16
+
+### Fixed
+- **Eskom Miniflex and Ruraflex 2026/27 capacity charge (data fix, raises the
+  R/kVA/month NMD charge).** `capacity_r_kva_month` was stored as the network
+  capacity charge only, dropping the generation capacity charge. Verified
+  against the official Eskom 1 April 2026 schedule, which lists both as separate
+  R/kVA/month charges; the 2025/26 blocks already bundle generation + network.
+  Capacity is now generation + network on all 24 cells (both tariffs, all zones
+  and voltages). Effect by voltage: Ruraflex +5.07 (<500V) / +7.63 (≥500V&≤22kV);
+  Miniflex +5.29 (<500V) / +12.27 (≥500V<66kV) / +9.28 (≥66kV≤132kV) / +10.65
+  (>132kV). Example, >900km <500V: Ruraflex 56.95 -> 62.02, Miniflex
+  54.58 -> 59.87 R/kVA/month. Energy, levies and service charges were already
+  correct and are unchanged. Script: `scripts/fix_eskom_2026_gen_capacity.py`.
+
 ## [1.7.1] - 2026-06-15
 
 ### Fixed
