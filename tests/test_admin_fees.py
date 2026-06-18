@@ -85,12 +85,18 @@ class TestAdminFeeBehaviour:
     def test_zero_nmd_lands_in_first_tier(self):
         assert get_eskom_admin_fee("Eskom Megaflex", 0.0) == pytest.approx(0.79)
 
-    def test_historical_version_without_admin_fees_returns_zero(self):
-        # 2025-04-01 version has no admin_fees block; should fall back to 0.0.
+    def test_2025_version_returns_gen_offset_admin(self):
+        # 2025-04-01 now carries the gen-offset admin_fees block (Booklet 2025/26
+        # p42). Miniflex (urban) 750 kVA -> >500 & <=1 MVA tier = R19.37/POD/day.
         fee = get_eskom_admin_fee(
             "Eskom Miniflex", 750.0, date=_dt.date(2025, 6, 1)
         )
-        assert fee == 0.0
+        assert fee == pytest.approx(19.37)
+        # Ruraflex (rural) <=100 kVA tier = R1.35/POD/day.
+        fee_rural = get_eskom_admin_fee(
+            "Eskom Ruraflex", 50.0, date=_dt.date(2025, 6, 1)
+        )
+        assert fee_rural == pytest.approx(1.35)
 
 
 # ============================================================================

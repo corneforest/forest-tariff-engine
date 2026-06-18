@@ -10,6 +10,25 @@ The version is authored in `pyproject.toml` and released as git tag `v{version}`
 [Semantic Versioning](https://semver.org/): PATCH = data fix on existing
 tariffs, MINOR = new tariffs/providers, MAJOR = schema or API break.
 
+## [1.11.0] - 2026-06-18
+
+### Added
+- **Eskom 2025/26 Gen-Offset (export) rates for Miniflex and Ruraflex.**
+  Previously only 2026/27 carried Eskom export rates; the 2025/26 booklet does
+  publish them (Gen-offset Urban/Rural, Non-local Authority, p45). Added
+  `export_energy_c_per_kwh` + `confirmed_base_export_c_per_kwh` for both tariffs
+  across all zones/voltages (ex VAT). Default cell >900km <500V, HD Peak:
+  Miniflex 671.06 c/kWh, Ruraflex 677.66 c/kWh. Modelled exactly like the
+  2026/27 blocks (all-in export = published gen-offset energy charge; ancillary
+  credit omitted, as in 2026/27).
+- **Eskom 2025/26 Gen-Offset admin fee block** (`admin_fees`, p42) so
+  `get_eskom_admin_fee(...)` returns the correct R/POD/day for 2025/26 instead
+  of 0: urban 0.73/12.40/19.37/19.37, rural 1.35/12.40/19.37/19.37 by NMD tier.
+  The service + admin charge tiers (`service_charge_tiers`) already matched the
+  gen-offset values and are unchanged.
+
+  Script: `scripts/add_eskom_2025_export.py`.
+
 ## [1.10.1] - 2026-06-18
 
 ### Changed

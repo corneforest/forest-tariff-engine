@@ -418,6 +418,30 @@ class TestCapacitySplit:
 
 
 # ============================================================================
+# Section 6 - Eskom 2025/26 Gen-Offset (export) rates
+# ============================================================================
+
+class TestEskom2025Export:
+    """2025/26 Gen-Offset export rates (Booklet 2025/26 p45, >900km <500V)."""
+
+    def test_miniflex_2025_export_present(self):
+        import datetime as dt
+        from tariff_engine.history import get_tariff_rates_for_date
+        t = get_tariff_rates_for_date("Eskom Miniflex", dt.date(2025, 6, 1))
+        assert t.export_hd_peak is not None
+        assert math.isclose(t.export_hd_peak, 6.7106, rel_tol=1e-4)
+        assert math.isclose(t.export_ld_off_peak, 1.1185, rel_tol=1e-4)
+
+    def test_ruraflex_2025_export_present(self):
+        import datetime as dt
+        from tariff_engine.history import get_tariff_rates_for_date
+        t = get_tariff_rates_for_date("Eskom Ruraflex", dt.date(2025, 6, 1))
+        assert t.export_hd_peak is not None
+        assert math.isclose(t.export_hd_peak, 6.7766, rel_tol=1e-4)
+        assert math.isclose(t.export_ld_off_peak, 1.1294, rel_tol=1e-4)
+
+
+# ============================================================================
 # Section 6 - Service + admin charge by NMD bracket (Eskom)
 # ============================================================================
 
