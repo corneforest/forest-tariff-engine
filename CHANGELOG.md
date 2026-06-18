@@ -10,6 +10,35 @@ The version is authored in `pyproject.toml` and released as git tag `v{version}`
 [Semantic Versioning](https://semver.org/): PATCH = data fix on existing
 tariffs, MINOR = new tariffs/providers, MAJOR = schema or API break.
 
+## [1.10.0] - 2026-06-16
+
+### Added
+- **Eskom service + administration charges by NMD bracket (Miniflex and
+  Ruraflex, both rate years).** Previously `service_charge_pa` was hard-coded to
+  the smallest (<=100 kVA) customer category and the admin charge was not
+  represented at all. The data now carries a `service_charge_tiers` block per
+  Eskom flex tariff (NMD brackets <=100 / <=500 / <=1000 / >1000 kVA plus a
+  Key-customer category, each with service and admin R/POD/day, ex VAT). The
+  resolver selects the bracket the same way it selects zone/voltage:
+  `get_tariff_rates(...)` and `get_tariff_rates_for_date(...)` take an optional
+  `nmd_kva` (and `key_customer`) and return the bracket's `service_charge_pa`
+  plus a new `admin_charge_pa` field on `TariffRates`.
+- **`TariffRates.admin_charge_pa`** (R/year). 0 for tariffs without an admin
+  charge.
+
+### Changed / compatibility
+- `service_charge_pa` is **kept**. With no `nmd_kva` it returns the smallest
+  bracket (<=100 kVA) for Eskom, identical to before, so existing callers are
+  unaffected. Municipal tariffs ignore `nmd_kva` entirely and keep their flat
+  `service_charge_pa` with `admin_charge_pa` = 0. Example: Ruraflex 2026/27 at
+  NMD 1000 kVA now resolves service R78,807.15/yr + admin R7,690.55/yr, vs the
+  flat R9,190.70/yr before. Script: `scripts/add_eskom_service_tiers.py`.
+
+### Known gaps
+- Megaflex service/admin brackets are **not** included here (folded into the
+  Megaflex follow-up; Megaflex has only >1MVA + Key-customer categories and its
+  saved service charge is currently wrong).
+
 ## [1.9.0] - 2026-06-16
 
 ### Added

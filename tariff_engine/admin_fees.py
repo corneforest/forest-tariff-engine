@@ -7,8 +7,10 @@ Per the Schedule of Standard Prices effective 1 April 2026, paragraph 46 pt 6:
 the Gen-Offset (and by extension Banking) tariff includes a R/POD/day
 administration charge based on the monthly utilised capacity (NMD) of the
 Gen-Offset service agreement linked to an account. This fee is IN ADDITION
-to the underlying tariff's service+admin charge (already represented by
-TariffRates.service_charge_pa). Source values: Table 33 (urban) / 34 (rural).
+to the underlying tariff's own service and admin charges (exposed on
+TariffRates as service_charge_pa and admin_charge_pa, selected by NMD bracket
+via get_tariff_rates(..., nmd_kva=...)). Source values: Table 33 (urban) /
+34 (rural).
 
 Tier breakpoints (NMD in kVA) and rates are stored in tariff_data.json under
 each Eskom version's `admin_fees` block. Values are ex-VAT, R/POD/day.

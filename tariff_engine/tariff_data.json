@@ -355,6 +355,35 @@
               }
             },
             "service_charge_pa": 5015.1,
+            "service_charge_tiers": {
+              "_note": "Service + admin charge by customer category, R/POD/day ex VAT. nmd_brackets matched by NMD (kVA); max_kva=null = upper-open. key_customer is a special Eskom designation, not NMD-derived.",
+              "nmd_brackets": [
+                {
+                  "max_kva": 100,
+                  "service_r_per_pod_per_day": 13.74,
+                  "admin_r_per_pod_per_day": 0.73
+                },
+                {
+                  "max_kva": 500,
+                  "service_r_per_pod_per_day": 64.28,
+                  "admin_r_per_pod_per_day": 12.4
+                },
+                {
+                  "max_kva": 1000,
+                  "service_r_per_pod_per_day": 198.52,
+                  "admin_r_per_pod_per_day": 19.37
+                },
+                {
+                  "max_kva": null,
+                  "service_r_per_pod_per_day": 198.52,
+                  "admin_r_per_pod_per_day": 19.37
+                }
+              ],
+              "key_customer": {
+                "service_r_per_pod_per_day": 1118.46,
+                "admin_r_per_pod_per_day": 19.37
+              }
+            },
             "demand_charge_kva": 0.0
           },
           "Eskom Ruraflex": {
@@ -568,6 +597,35 @@
               }
             },
             "service_charge_pa": 8449.75,
+            "service_charge_tiers": {
+              "_note": "Service + admin charge by customer category, R/POD/day ex VAT. nmd_brackets matched by NMD (kVA); max_kva=null = upper-open. key_customer is a special Eskom designation, not NMD-derived.",
+              "nmd_brackets": [
+                {
+                  "max_kva": 100,
+                  "service_r_per_pod_per_day": 23.15,
+                  "admin_r_per_pod_per_day": 1.35
+                },
+                {
+                  "max_kva": 500,
+                  "service_r_per_pod_per_day": 64.28,
+                  "admin_r_per_pod_per_day": 12.4
+                },
+                {
+                  "max_kva": 1000,
+                  "service_r_per_pod_per_day": 198.52,
+                  "admin_r_per_pod_per_day": 19.37
+                },
+                {
+                  "max_kva": null,
+                  "service_r_per_pod_per_day": 198.52,
+                  "admin_r_per_pod_per_day": 19.37
+                }
+              ],
+              "key_customer": {
+                "service_r_per_pod_per_day": 1118.46,
+                "admin_r_per_pod_per_day": 19.37
+              }
+            },
             "demand_charge_kva": 0.0
           },
           "Eskom Landrate 2": {
@@ -1336,6 +1394,35 @@
               }
             },
             "service_charge_pa": 5453.1,
+            "service_charge_tiers": {
+              "_note": "Service + admin charge by customer category, R/POD/day ex VAT. nmd_brackets matched by NMD (kVA); max_kva=null = upper-open. key_customer is a special Eskom designation, not NMD-derived.",
+              "nmd_brackets": [
+                {
+                  "max_kva": 100,
+                  "service_r_per_pod_per_day": 14.94,
+                  "admin_r_per_pod_per_day": 0.79
+                },
+                {
+                  "max_kva": 500,
+                  "service_r_per_pod_per_day": 69.91,
+                  "admin_r_per_pod_per_day": 13.49
+                },
+                {
+                  "max_kva": 1000,
+                  "service_r_per_pod_per_day": 215.91,
+                  "admin_r_per_pod_per_day": 21.07
+                },
+                {
+                  "max_kva": null,
+                  "service_r_per_pod_per_day": 215.91,
+                  "admin_r_per_pod_per_day": 21.07
+                }
+              ],
+              "key_customer": {
+                "service_r_per_pod_per_day": 1216.44,
+                "admin_r_per_pod_per_day": 21.07
+              }
+            },
             "demand_charge_kva": 0.0
           },
           "Eskom Megaflex": {
@@ -2156,6 +2243,35 @@
               }
             },
             "service_charge_pa": 9190.7,
+            "service_charge_tiers": {
+              "_note": "Service + admin charge by customer category, R/POD/day ex VAT. nmd_brackets matched by NMD (kVA); max_kva=null = upper-open. key_customer is a special Eskom designation, not NMD-derived.",
+              "nmd_brackets": [
+                {
+                  "max_kva": 100,
+                  "service_r_per_pod_per_day": 25.18,
+                  "admin_r_per_pod_per_day": 1.47
+                },
+                {
+                  "max_kva": 500,
+                  "service_r_per_pod_per_day": 69.91,
+                  "admin_r_per_pod_per_day": 13.49
+                },
+                {
+                  "max_kva": 1000,
+                  "service_r_per_pod_per_day": 215.91,
+                  "admin_r_per_pod_per_day": 21.07
+                },
+                {
+                  "max_kva": null,
+                  "service_r_per_pod_per_day": 215.91,
+                  "admin_r_per_pod_per_day": 21.07
+                }
+              ],
+              "key_customer": {
+                "service_r_per_pod_per_day": 1216.44,
+                "admin_r_per_pod_per_day": 21.07
+              }
+            },
             "demand_charge_kva": 0.0
           },
           "Eskom Landrate 2": {

@@ -415,3 +415,52 @@ class TestCapacitySplit:
         t = get_tariff_rates("Eskom Megaflex")
         assert t.generation_capacity_charge_kva == 0.0
         assert math.isclose(t.network_capacity_charge_kva, t.capacity_charge_kva, rel_tol=1e-9)
+
+
+# ============================================================================
+# Section 6 - Service + admin charge by NMD bracket (Eskom)
+# ============================================================================
+
+class TestServiceChargeByNmd:
+    """Eskom service + admin charges step up by customer category (NMD bracket).
+    Municipal tariffs are flat and must ignore nmd_kva entirely."""
+
+    def test_default_no_nmd_is_smallest_bracket(self):
+        # Backward compatibility: no nmd -> <=100 kVA service, as before.
+        t = get_tariff_rates("Eskom Ruraflex")
+        assert math.isclose(t.service_charge_pa, 9190.70, rel_tol=1e-4)  # 25.18 * 365
+
+    def test_ruraflex_1000kva_bracket(self):
+        t = get_tariff_rates("Eskom Ruraflex", nmd_kva=1000)
+        assert math.isclose(t.service_charge_pa, 215.91 * 365, rel_tol=1e-4)  # 78807.15
+        assert math.isclose(t.admin_charge_pa, 21.07 * 365, rel_tol=1e-4)     # 7690.55
+
+    def test_miniflex_mid_bracket(self):
+        t = get_tariff_rates("Eskom Miniflex", nmd_kva=300)
+        assert math.isclose(t.service_charge_pa, 69.91 * 365, rel_tol=1e-4)
+        assert math.isclose(t.admin_charge_pa, 13.49 * 365, rel_tol=1e-4)
+
+    def test_bracket_boundary_inclusive(self):
+        # 100 kVA falls in the <=100 bracket; just above moves up.
+        at = get_tariff_rates("Eskom Miniflex", nmd_kva=100)
+        above = get_tariff_rates("Eskom Miniflex", nmd_kva=100.01)
+        assert math.isclose(at.service_charge_pa, 14.94 * 365, rel_tol=1e-4)
+        assert math.isclose(above.service_charge_pa, 69.91 * 365, rel_tol=1e-4)
+
+    def test_key_customer(self):
+        t = get_tariff_rates("Eskom Ruraflex", key_customer=True)
+        assert math.isclose(t.service_charge_pa, 1216.44 * 365, rel_tol=1e-4)
+
+    def test_2025_26_bracket_via_date(self):
+        from tariff_engine import get_tariff_rates_for_date
+        import datetime as _dt
+        t = get_tariff_rates_for_date("Eskom Ruraflex", _dt.date(2025, 6, 1), nmd_kva=1000)
+        assert math.isclose(t.service_charge_pa, 198.52 * 365, rel_tol=1e-4)
+        assert math.isclose(t.admin_charge_pa, 19.37 * 365, rel_tol=1e-4)
+
+    def test_municipal_ignores_nmd(self):
+        # Municipal service charge is flat; nmd_kva must not change it, admin stays 0.
+        flat = get_tariff_rates("CoCT LV TOU")
+        scaled = get_tariff_rates("CoCT LV TOU", nmd_kva=5000)
+        assert math.isclose(flat.service_charge_pa, scaled.service_charge_pa, rel_tol=1e-9)
+        assert scaled.admin_charge_pa == 0.0

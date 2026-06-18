@@ -50,6 +50,8 @@ def get_tariff_rates_for_date(
     zone: Optional[str] = None,
     voltage: Optional[str] = None,
     sseg_option: Optional[str] = None,
+    nmd_kva: Optional[float] = None,
+    key_customer: bool = False,
 ) -> TariffRates:
     """
     Return TOU rates applicable on a specific past or future date.
@@ -81,4 +83,5 @@ def get_tariff_rates_for_date(
     historical lookups for dates before the current effective period.
     """
     data = _load_tariff_json_for_date(tariff_name, date)
-    return _resolve_tariff_rates(tariff_name, data, zone, voltage, sseg_option)
+    return _resolve_tariff_rates(tariff_name, data, zone, voltage, sseg_option,
+                                 nmd_kva, key_customer)

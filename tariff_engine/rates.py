@@ -200,6 +200,7 @@ def _resolve_from_flat_td(name: str, td: dict) -> dict:
             "generation_capacity_r_kva_month": t.get("generation_capacity_r_kva_month"),
             "network_capacity_r_kva_month": t.get("network_capacity_r_kva_month"),
             "service_charge_pa": t["service_charge_pa"],
+            "service_charge_tiers": t.get("service_charge_tiers"),
             "demand_charge_kva": t.get("demand_charge_kva", 0.0),
             "tou_schedule": t.get("tou_schedule", "eskom"),
         }
@@ -264,7 +265,8 @@ class TariffRates:
     export_ld_peak: Optional[float] = None
     export_ld_standard: Optional[float] = None
     export_ld_off_peak: Optional[float] = None
-    service_charge_pa: float = 0.0      # R/year
+    service_charge_pa: float = 0.0      # R/year (NMD bracket for Eskom; flat for municipal)
+    admin_charge_pa: float = 0.0        # R/year administration charge (Eskom NMD bracket; 0 otherwise)
     capacity_charge_kva: float = 0.0   # R/kVA/month (NMD) - combined generation + network
     generation_capacity_charge_kva: float = 0.0  # R/kVA/month (NMD) - generation component
     network_capacity_charge_kva: float = 0.0      # R/kVA/month (NMD) - network component
@@ -287,12 +289,30 @@ class TariffRates:
         return r if r is not None else 0.0
 
 
+def _pick_service_tier(tiers: dict, nmd_kva: Optional[float], key_customer: bool) -> dict:
+    """Select the service/admin charge tier for an NMD (kVA), or the key-customer
+    category. Defaults to the smallest bracket when nmd_kva is None (matching the
+    historical flat service_charge_pa)."""
+    if key_customer and tiers.get("key_customer"):
+        return tiers["key_customer"]
+    brackets = tiers["nmd_brackets"]
+    if nmd_kva is None:
+        return brackets[0]
+    for b in brackets:
+        cap = b.get("max_kva")
+        if cap is None or nmd_kva <= cap:
+            return b
+    return brackets[-1]
+
+
 def _resolve_tariff_rates(
     name: str,
     data: dict,
     zone: Optional[str] = None,
     voltage: Optional[str] = None,
     sseg_option: Optional[str] = None,
+    nmd_kva: Optional[float] = None,
+    key_customer: bool = False,
 ) -> TariffRates:
     """Convert a pre-loaded tariff flat dict to a TariffRates object."""
     if data["type"] == "eskom":
@@ -336,6 +356,17 @@ def _resolve_tariff_rates(
     def c(x: Optional[float]) -> Optional[float]:
         return x / 100.0 if x is not None else None
 
+    # Service + admin charge. Eskom flex tariffs carry an NMD bracket table;
+    # everything else (incl. municipal) uses the flat service_charge_pa, no admin.
+    tiers = data.get("service_charge_tiers")
+    if tiers:
+        tier = _pick_service_tier(tiers, nmd_kva, key_customer)
+        service_pa = round(tier["service_r_per_pod_per_day"] * 365.0, 2)
+        admin_pa = round(tier["admin_r_per_pod_per_day"] * 365.0, 2)
+    else:
+        service_pa = data.get("service_charge_pa", 0.0)
+        admin_pa = 0.0
+
     return TariffRates(
         name=name,
         hd_peak         = c(imp["HD"]["P"]),
@@ -350,7 +381,8 @@ def _resolve_tariff_rates(
         export_ld_peak      = c(exp["LD"]["P"]) if exp else None,
         export_ld_standard  = c(exp["LD"]["S"]) if exp else None,
         export_ld_off_peak  = c(exp["LD"]["O"]) if exp else None,
-        service_charge_pa   = data.get("service_charge_pa", 0.0),
+        service_charge_pa   = service_pa,
+        admin_charge_pa     = admin_pa,
         capacity_charge_kva = cap,
         generation_capacity_charge_kva = gen_cap,
         network_capacity_charge_kva    = net_cap,
@@ -364,6 +396,8 @@ def get_tariff_rates(
     zone: Optional[str] = None,
     voltage: Optional[str] = None,
     sseg_option: Optional[str] = None,
+    nmd_kva: Optional[float] = None,
+    key_customer: bool = False,
 ) -> TariffRates:
     """
     Return TOU rates and fixed charges for a named tariff (latest version).
@@ -378,13 +412,20 @@ def get_tariff_rates(
         Eskom supply voltage (e.g. "<500V"). Defaults to JSON default_voltage.
     sseg_option : str, optional
         CoCT SSEG export option key (e.g. "SSEG Tariff 1", "SSEG TOU").
+    nmd_kva : float, optional
+        Notified Maximum Demand (kVA). For Eskom flex tariffs this selects the
+        service + admin charge bracket; defaults to the smallest (<=100 kVA)
+        bracket. Ignored for municipal tariffs (their service charge is flat).
+    key_customer : bool
+        Eskom "Key customer" category (overrides nmd_kva for service/admin).
 
     Raises
     ------
     KeyError if the tariff name is not found.
     """
     data = _load_tariff_json(tariff_name)
-    return _resolve_tariff_rates(tariff_name, data, zone, voltage, sseg_option)
+    return _resolve_tariff_rates(tariff_name, data, zone, voltage, sseg_option,
+                                 nmd_kva, key_customer)
 
 
 def list_tariffs() -> list[str]:
