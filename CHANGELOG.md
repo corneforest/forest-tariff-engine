@@ -10,6 +10,14 @@ The version is authored in `pyproject.toml` and released as git tag `v{version}`
 [Semantic Versioning](https://semver.org/): PATCH = data fix on existing
 tariffs, MINOR = new tariffs/providers, MAJOR = schema or API break.
 
+## [1.10.1] - 2026-06-18
+
+### Changed
+- **Docs:** documented the v1.10.0 NMD service/admin API in README.md and
+  DASHBOARD_INTEGRATION.md (`get_tariff_rates(..., nmd_kva=, key_customer=)`,
+  `TariffRates.admin_charge_pa`, and the municipality-safe behaviour). No code
+  or data change.
+
 ## [1.10.0] - 2026-06-16
 
 ### Added

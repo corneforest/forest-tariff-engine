@@ -160,11 +160,11 @@ Everything below is callable as `from tariff_engine import X` (or via the submod
 | `get_tou_period(month, hour, weekday_iso, is_holiday, schedule="eskom") -> (season, tou_period)` | Classify a single hour | both |
 | `build_hourly_tou(year, schedule="eskom") -> dict` | Build 8760-hour TOU arrays | both |
 | `list_tou_schedules() -> list[str]` | Names of available TOU schedules | both |
-| `get_tariff_rates(name, zone=None, voltage=None, sseg_option=None) -> TariffRates` | Latest rates for a tariff | both |
-| `get_tariff_rates_for_date(name, date, zone=None, voltage=None) -> TariffRates` | Rates active on a specific past date | Dashboard |
+| `get_tariff_rates(name, zone=None, voltage=None, sseg_option=None, nmd_kva=None, key_customer=False) -> TariffRates` | Latest rates for a tariff | both |
+| `get_tariff_rates_for_date(name, date, zone=None, voltage=None, nmd_kva=None, key_customer=False) -> TariffRates` | Rates active on a specific past date | Dashboard |
 | `calculate_hourly_savings(...)` | Hourly ZAR savings from plant data | Dashboard |
 | `list_tariffs() -> list[str]` | All available tariff names | both |
-| `TariffRates` (dataclass) | Container with `hd_peak`, `ld_off_peak`, `service_charge_pa`, `tou_schedule`, etc. | both |
+| `TariffRates` (dataclass) | Container with `hd_peak`, `ld_off_peak`, `service_charge_pa`, `admin_charge_pa`, `tou_schedule`, etc. | both |
 
 Schema versioning lives in `rates.py`. Currently on `schema_version 2` which supports historical lookups.
 
@@ -182,6 +182,24 @@ argument that **defaults to `"eskom"`**, so existing code is unaffected.
   schedule: `build_hourly_tou(year, schedule=rates.tou_schedule)`. If you keep
   calling `build_hourly_tou(year)`, non-Eskom tariffs (e.g. Stellenbosch TOU)
   will be classified on the Eskom clock and savings will be wrong.
+
+### Service + admin charge by NMD (added v1.10.0)
+
+Eskom Miniflex/Ruraflex service and admin charges step up by customer category
+(set by NMD). Pass `nmd_kva` to select the bracket; a new `admin_charge_pa`
+field carries the matching administration charge.
+
+```python
+t = get_tariff_rates("Eskom Ruraflex", nmd_kva=1000)
+t.service_charge_pa   # R78,807.15  (>500 kVA-1 MVA band)
+t.admin_charge_pa     # R7,690.55
+```
+
+- Without `nmd_kva`, `service_charge_pa` is the ≤100 kVA default and existing
+  behaviour is unchanged.
+- **Municipal tariffs are unaffected:** `nmd_kva` is ignored, `service_charge_pa`
+  stays flat, `admin_charge_pa` is 0.
+- Full fixed service cost = `service_charge_pa + admin_charge_pa`.
 
 ---
 
