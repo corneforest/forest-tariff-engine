@@ -1,5 +1,10 @@
 # Changelog
 
+## [1.14.0] - 2026-06-29
+
+### Added
+- tariffs: eThekwini 2026/27 rates (Business Scale 1, Industrial TOU, effective 2026-07-01)
+
 ## [1.13.0] - 2026-06-29
 
 ### Added
