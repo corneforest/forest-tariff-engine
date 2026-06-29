@@ -5304,6 +5304,104 @@
               "tou_schedule": "stellenbosch-2025"
             }
           }
+        },
+        {
+          "effective": "2026-07-01",
+          "tariffs": {
+            "Stellenbosch TOU LV (TOU1)": {
+              "type": "municipal_tou",
+              "energy_c_per_kwh": {
+                "HD": {
+                  "P": 890.84,
+                  "S": 269.8,
+                  "O": 146.64
+                },
+                "LD": {
+                  "P": 290.49,
+                  "S": 200.01,
+                  "O": 142.0
+                }
+              },
+              "export_c_per_kwh": {
+                "HD": {
+                  "P": 616.24,
+                  "S": 171.86,
+                  "O": 122.51
+                },
+                "LD": {
+                  "P": 269.63,
+                  "S": 162.0,
+                  "O": 122.51
+                }
+              },
+              "service_r_month": 6461.86,
+              "capacity_r_kva_month": 100.37,
+              "demand_r_kva_month": 123.66,
+              "tou_schedule": "stellenbosch-2025"
+            },
+            "Stellenbosch TOU MV (TOU2)": {
+              "type": "municipal_tou",
+              "energy_c_per_kwh": {
+                "HD": {
+                  "P": 873.6,
+                  "S": 264.54,
+                  "O": 143.44
+                },
+                "LD": {
+                  "P": 284.9,
+                  "S": 182.0,
+                  "O": 136.0
+                }
+              },
+              "export_c_per_kwh": {
+                "HD": {
+                  "P": 616.24,
+                  "S": 171.86,
+                  "O": 122.51
+                },
+                "LD": {
+                  "P": 269.63,
+                  "S": 162.0,
+                  "O": 122.51
+                }
+              },
+              "service_r_month": 12231.43,
+              "capacity_r_kva_month": 86.11,
+              "demand_r_kva_month": 106.34,
+              "tou_schedule": "stellenbosch-2025"
+            },
+            "Stellenbosch IND1": {
+              "type": "municipal_flat",
+              "energy_c_per_kwh": {
+                "HD": {
+                  "P": 198.0,
+                  "S": 198.0,
+                  "O": 198.0
+                },
+                "LD": {
+                  "P": 198.0,
+                  "S": 198.0,
+                  "O": 198.0
+                }
+              },
+              "export_c_per_kwh": {
+                "HD": {
+                  "P": 616.24,
+                  "S": 171.86,
+                  "O": 122.51
+                },
+                "LD": {
+                  "P": 269.63,
+                  "S": 162.0,
+                  "O": 122.51
+                }
+              },
+              "service_r_month": 3381.53,
+              "capacity_r_kva_month": 90.77,
+              "demand_r_kva_month": 458.29,
+              "tou_schedule": "stellenbosch-2025"
+            }
+          }
         }
       ]
     },
