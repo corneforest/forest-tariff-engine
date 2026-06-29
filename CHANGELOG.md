@@ -1,5 +1,10 @@
 # Changelog
 
+## [1.13.0] - 2026-06-29
+
+### Added
+- tariffs: Drakenstein 2026/27 rates (Large Bulk, Bulk TOU MV/LV, effective 2026-07-01)
+
 All notable changes to the Forest Energy Tariff Engine are recorded here so
 consuming programs (Solar Model, Solar Dashboard) know what changed when they
 bump their pinned version.
