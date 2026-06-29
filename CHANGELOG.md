@@ -1,5 +1,10 @@
 # Changelog
 
+## [1.16.0] - 2026-06-29
+
+### Added
+- tariffs: Mangaung 2026/27 rates (Elecflex 1/2/3, effective 2026-07-01)
+
 ## [1.15.0] - 2026-06-29
 
 ### Added

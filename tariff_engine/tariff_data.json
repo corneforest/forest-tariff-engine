@@ -6326,6 +6326,68 @@
               "demand_r_kva_month": 291.62
             }
           }
+        },
+        {
+          "effective": "2026-07-01",
+          "tariffs": {
+            "Mangaung Elecflex 1": {
+              "type": "municipal_tou",
+              "energy_c_per_kwh": {
+                "HD": {
+                  "P": 607.75,
+                  "S": 311.02,
+                  "O": 291.24
+                },
+                "LD": {
+                  "P": 308.82,
+                  "S": 202.22,
+                  "O": 187.93
+                }
+              },
+              "export_c_per_kwh": null,
+              "service_r_month": 6617.78,
+              "capacity_r_kva_month": 98.71,
+              "demand_r_kva_month": 275.08
+            },
+            "Mangaung Elecflex 2": {
+              "type": "municipal_tou",
+              "energy_c_per_kwh": {
+                "HD": {
+                  "P": 606.65,
+                  "S": 309.92,
+                  "O": 284.64
+                },
+                "LD": {
+                  "P": 308.82,
+                  "S": 202.22,
+                  "O": 179.14
+                }
+              },
+              "export_c_per_kwh": null,
+              "service_r_month": 4385.02,
+              "capacity_r_kva_month": 109.34,
+              "demand_r_kva_month": 296.73
+            },
+            "Mangaung Elecflex 3": {
+              "type": "municipal_tou",
+              "energy_c_per_kwh": {
+                "HD": {
+                  "P": 606.65,
+                  "S": 308.82,
+                  "O": 289.04
+                },
+                "LD": {
+                  "P": 324.21,
+                  "S": 212.11,
+                  "O": 190.13
+                }
+              },
+              "export_c_per_kwh": null,
+              "service_r_month": 3418.1,
+              "capacity_r_kva_month": 114.23,
+              "demand_r_kva_month": 320.49
+            }
+          }
         }
       ]
     },
