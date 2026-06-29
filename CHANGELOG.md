@@ -1,5 +1,10 @@
 # Changelog
 
+## [1.17.0] - 2026-06-29
+
+### Added
+- tariffs: Mogale City 2026/27 rates (9.01% increase, TOU + Non-TOU commercial/industrial, effective 2026-07-01)
+
 ## [1.16.0] - 2026-06-29
 
 ### Added

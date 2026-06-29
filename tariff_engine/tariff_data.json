@@ -4902,6 +4902,125 @@
               "demand_r_kva_month": 153.2
             }
           }
+        },
+        {
+          "effective": "2026-07-01",
+          "tariffs": {
+            "Mogale City Commercial Medium FlexiTime TOU": {
+              "type": "municipal_tou",
+              "energy_c_per_kwh": {
+                "HD": {
+                  "P": 982.5779,
+                  "S": 289.7137,
+                  "O": 133.341
+                },
+                "LD": {
+                  "P": 290.6956,
+                  "S": 184.0227,
+                  "O": 130.9166
+                }
+              },
+              "export_c_per_kwh": null,
+              "service_r_month": 3662.74,
+              "capacity_r_kva_month": 51.82,
+              "demand_r_kva_month": 104.3543
+            },
+            "Mogale City Commercial Large FlexiTime TOU": {
+              "type": "municipal_tou",
+              "energy_c_per_kwh": {
+                "HD": {
+                  "P": 1043.4219,
+                  "S": 289.1856,
+                  "O": 139.5273
+                },
+                "LD": {
+                  "P": 328.567,
+                  "S": 191.4652,
+                  "O": 141.9528
+                }
+              },
+              "export_c_per_kwh": null,
+              "service_r_month": 14372.99,
+              "capacity_r_kva_month": 51.8192,
+              "demand_r_kva_month": 104.3543
+            },
+            "Mogale City Industrial Medium FlexiTime TOU": {
+              "type": "municipal_tou",
+              "energy_c_per_kwh": {
+                "HD": {
+                  "P": 1225.1229,
+                  "S": 318.5349,
+                  "O": 162.3856
+                },
+                "LD": {
+                  "P": 342.7966,
+                  "S": 210.0196,
+                  "O": 146.8521
+                }
+              },
+              "export_c_per_kwh": null,
+              "service_r_month": 3662.74,
+              "capacity_r_kva_month": 51.8192,
+              "demand_r_kva_month": 104.3543
+            },
+            "Mogale City Commercial Medium Non-TOU": {
+              "type": "municipal_flat",
+              "energy_c_per_kwh": {
+                "HD": {
+                  "P": 291.19,
+                  "S": 291.19,
+                  "O": 291.19
+                },
+                "LD": {
+                  "P": 291.19,
+                  "S": 291.19,
+                  "O": 291.19
+                }
+              },
+              "export_c_per_kwh": null,
+              "service_r_month": 3270.3,
+              "capacity_r_kva_month": 51.82,
+              "demand_r_kva_month": 64.85
+            },
+            "Mogale City Commercial Large Non-TOU": {
+              "type": "municipal_flat",
+              "energy_c_per_kwh": {
+                "HD": {
+                  "P": 221.43,
+                  "S": 221.43,
+                  "O": 221.43
+                },
+                "LD": {
+                  "P": 221.43,
+                  "S": 221.43,
+                  "O": 221.43
+                }
+              },
+              "export_c_per_kwh": null,
+              "service_r_month": 6131.81,
+              "capacity_r_kva_month": 51.91,
+              "demand_r_kva_month": 104.54
+            },
+            "Mogale City Industrial Large Non-TOU": {
+              "type": "municipal_flat",
+              "energy_c_per_kwh": {
+                "HD": {
+                  "P": 221.29,
+                  "S": 221.29,
+                  "O": 221.29
+                },
+                "LD": {
+                  "P": 221.29,
+                  "S": 221.29,
+                  "O": 221.29
+                }
+              },
+              "export_c_per_kwh": null,
+              "service_r_month": 15757.71,
+              "capacity_r_kva_month": 51.82,
+              "demand_r_kva_month": 167.01
+            }
+          }
         }
       ]
     },
