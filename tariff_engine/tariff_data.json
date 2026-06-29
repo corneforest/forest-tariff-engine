@@ -3397,6 +3397,101 @@
               "demand_r_kva_month": 128.57
             }
           }
+        },
+        {
+          "effective": "2026-07-01",
+          "tariffs": {
+            "Drakenstein Large Bulk (>100 kVA)": {
+              "type": "municipal_flat",
+              "energy_c_per_kwh": {
+                "HD": {
+                  "P": 167.19,
+                  "S": 167.19,
+                  "O": 167.19
+                },
+                "LD": {
+                  "P": 167.19,
+                  "S": 167.19,
+                  "O": 167.19
+                }
+              },
+              "export_c_per_kwh": {
+                "HD": {
+                  "P": 103.62,
+                  "S": 103.62,
+                  "O": 103.62
+                },
+                "LD": {
+                  "P": 103.62,
+                  "S": 103.62,
+                  "O": 103.62
+                }
+              },
+              "service_r_month": 2931.40,
+              "capacity_r_kva_month": 0,
+              "demand_r_kva_month": 496.78
+            },
+            "Drakenstein Bulk TOU MV": {
+              "type": "municipal_tou",
+              "energy_c_per_kwh": {
+                "HD": {
+                  "P": 691.77,
+                  "S": 235.59,
+                  "O": 131.47
+                },
+                "LD": {
+                  "P": 350.11,
+                  "S": 190.67,
+                  "O": 118.38
+                }
+              },
+              "export_c_per_kwh": {
+                "HD": {
+                  "P": 103.62,
+                  "S": 103.62,
+                  "O": 103.62
+                },
+                "LD": {
+                  "P": 103.62,
+                  "S": 103.62,
+                  "O": 103.62
+                }
+              },
+              "service_r_month": 3167.38,
+              "capacity_r_kva_month": 8.73,
+              "demand_r_kva_month": 124.52
+            },
+            "Drakenstein Bulk TOU LV": {
+              "type": "municipal_tou",
+              "energy_c_per_kwh": {
+                "HD": {
+                  "P": 691.77,
+                  "S": 247.51,
+                  "O": 139.10
+                },
+                "LD": {
+                  "P": 350.11,
+                  "S": 190.67,
+                  "O": 136.04
+                }
+              },
+              "export_c_per_kwh": {
+                "HD": {
+                  "P": 103.62,
+                  "S": 103.62,
+                  "O": 103.62
+                },
+                "LD": {
+                  "P": 103.62,
+                  "S": 103.62,
+                  "O": 103.62
+                }
+              },
+              "service_r_month": 3167.38,
+              "capacity_r_kva_month": 9.52,
+              "demand_r_kva_month": 131.14
+            }
+          }
         }
       ]
     },

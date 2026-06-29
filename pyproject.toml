@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "forest-tariff-engine"
-version = "1.12.0"
+version = "1.13.0"
 description = "South African electricity tariff engine (Eskom + municipalities). Shared between Forest Energy Solar Model and Solar Dashboard."
 readme = "README.md"
 requires-python = ">=3.10"
