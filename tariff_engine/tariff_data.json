@@ -5787,6 +5787,161 @@
               "demand_r_kva_month": 70.84
             }
           }
+        },
+        {
+          "effective": "2026-07-01",
+          "tariffs": {
+            "Langeberg Bulk LT Large Power <11kV": {
+              "type": "municipal_flat",
+              "energy_c_per_kwh": {
+                "HD": {
+                  "P": 159.36,
+                  "S": 159.36,
+                  "O": 159.36
+                },
+                "LD": {
+                  "P": 159.36,
+                  "S": 159.36,
+                  "O": 159.36
+                }
+              },
+              "export_c_per_kwh": {
+                "HD": {
+                  "P": 103.43,
+                  "S": 103.43,
+                  "O": 103.43
+                },
+                "LD": {
+                  "P": 103.43,
+                  "S": 103.43,
+                  "O": 103.43
+                }
+              },
+              "service_r_month": 4002.36,
+              "capacity_r_kva_month": 35.02,
+              "demand_r_kva_month": 466.99
+            },
+            "Langeberg Bulk HT Large Power 11kV": {
+              "type": "municipal_flat",
+              "energy_c_per_kwh": {
+                "HD": {
+                  "P": 157.72,
+                  "S": 157.72,
+                  "O": 157.72
+                },
+                "LD": {
+                  "P": 157.72,
+                  "S": 157.72,
+                  "O": 157.72
+                }
+              },
+              "export_c_per_kwh": {
+                "HD": {
+                  "P": 103.43,
+                  "S": 103.43,
+                  "O": 103.43
+                },
+                "LD": {
+                  "P": 103.43,
+                  "S": 103.43,
+                  "O": 103.43
+                }
+              },
+              "service_r_month": 4002.36,
+              "capacity_r_kva_month": 32.28,
+              "demand_r_kva_month": 466.99
+            },
+            "Langeberg Commercial Three Phase 100kVA": {
+              "type": "municipal_flat",
+              "energy_c_per_kwh": {
+                "HD": {
+                  "P": 320.49,
+                  "S": 320.49,
+                  "O": 320.49
+                },
+                "LD": {
+                  "P": 320.49,
+                  "S": 320.49,
+                  "O": 320.49
+                }
+              },
+              "export_c_per_kwh": {
+                "HD": {
+                  "P": 103.43,
+                  "S": 103.43,
+                  "O": 103.43
+                },
+                "LD": {
+                  "P": 103.43,
+                  "S": 103.43,
+                  "O": 103.43
+                }
+              },
+              "service_r_month": 2598.65,
+              "capacity_r_kva_month": 0,
+              "demand_r_kva_month": 0
+            },
+            "Langeberg TOU LT <11kV": {
+              "type": "municipal_tou",
+              "energy_c_per_kwh": {
+                "HD": {
+                  "P": 840.73,
+                  "S": 269.13,
+                  "O": 155.58
+                },
+                "LD": {
+                  "P": 288.21,
+                  "S": 204.84,
+                  "O": 137.52
+                }
+              },
+              "export_c_per_kwh": {
+                "HD": {
+                  "P": 103.43,
+                  "S": 103.43,
+                  "O": 103.43
+                },
+                "LD": {
+                  "P": 103.43,
+                  "S": 103.43,
+                  "O": 103.43
+                }
+              },
+              "service_r_month": 4002.36,
+              "capacity_r_kva_month": 66.96,
+              "demand_r_kva_month": 83.95
+            },
+            "Langeberg TOU HT 11kV": {
+              "type": "municipal_tou",
+              "energy_c_per_kwh": {
+                "HD": {
+                  "P": 832.31,
+                  "S": 266.43,
+                  "O": 154.02
+                },
+                "LD": {
+                  "P": 285.32,
+                  "S": 202.75,
+                  "O": 136.13
+                }
+              },
+              "export_c_per_kwh": {
+                "HD": {
+                  "P": 103.43,
+                  "S": 103.43,
+                  "O": 103.43
+                },
+                "LD": {
+                  "P": 103.43,
+                  "S": 103.43,
+                  "O": 103.43
+                }
+              },
+              "service_r_month": 4002.36,
+              "capacity_r_kva_month": 61.6,
+              "demand_r_kva_month": 77.22
+            }
+          }
         }
       ]
     },

@@ -1,5 +1,10 @@
 # Changelog
 
+## [1.15.0] - 2026-06-29
+
+### Added
+- tariffs: Langeberg 2026/27 rates (Bulk LT/HT, Commercial 3-phase, TOU LT/HT, effective 2026-07-01)
+
 ## [1.14.0] - 2026-06-29
 
 ### Added
