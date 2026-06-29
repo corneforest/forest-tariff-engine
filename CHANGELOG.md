@@ -1,5 +1,10 @@
 # Changelog
 
+## [1.18.0] - 2026-06-29
+
+### Added
+- tariffs: Overstrand 2026/27 rates (TOU LV E5B, TOU MV E5A, effective 2026-07-01)
+
 ## [1.17.0] - 2026-06-29
 
 ### Added

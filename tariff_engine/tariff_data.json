@@ -5157,6 +5157,49 @@
               "demand_r_kva_month": 80.78
             }
           }
+        },
+        {
+          "effective": "2026-07-01",
+          "tariffs": {
+            "Overstrand TOU LV (E5B)": {
+              "type": "municipal_tou",
+              "energy_c_per_kwh": {
+                "HD": {
+                  "P": 767.53,
+                  "S": 263.16,
+                  "O": 163.16
+                },
+                "LD": {
+                  "P": 383.81,
+                  "S": 218.51,
+                  "O": 150.54
+                }
+              },
+              "export_c_per_kwh": null,
+              "service_r_month": 2305.21,
+              "capacity_r_kva_month": 78.41,
+              "demand_r_kva_month": 151.11
+            },
+            "Overstrand TOU MV (E5A)": {
+              "type": "municipal_tou",
+              "energy_c_per_kwh": {
+                "HD": {
+                  "P": 761.87,
+                  "S": 257.52,
+                  "O": 157.5
+                },
+                "LD": {
+                  "P": 378.15,
+                  "S": 212.86,
+                  "O": 144.88
+                }
+              },
+              "export_c_per_kwh": null,
+              "service_r_month": 4870.94,
+              "capacity_r_kva_month": 57.1,
+              "demand_r_kva_month": 101.82
+            }
+          }
         }
       ]
     },
