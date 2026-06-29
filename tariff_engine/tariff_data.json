@@ -3072,6 +3072,94 @@
               "default_sseg": "SSEG Tariff 1 + Incentive"
             }
           }
+        },
+        {
+          "effective": "2026-07-01",
+          "tariffs": {
+            "CoCT Small Power Users 1": {
+              "type": "municipal_flat",
+              "energy_c_per_kwh": {
+                "HD": { "P": 298.10, "S": 298.10, "O": 298.10 },
+                "LD": { "P": 298.10, "S": 298.10, "O": 298.10 }
+              },
+              "export_c_per_kwh": null,
+              "service_r_month": 4204.18,
+              "capacity_r_kva_month": 0,
+              "demand_r_kva_month": 0,
+              "sseg_options": {
+                "SSEG Tariff 1": { "type": "flat", "c_per_kwh": 96.18 },
+                "SSEG Tariff 1 + Incentive": { "type": "flat", "c_per_kwh": 121.18 },
+                "SSEG Tariff 2": { "type": "flat", "c_per_kwh": 68.46 }
+              },
+              "default_sseg": "SSEG Tariff 1 + Incentive"
+            },
+            "CoCT LV TOU": {
+              "type": "municipal_tou",
+              "energy_c_per_kwh": {
+                "HD": { "P": 783.74, "S": 248.96, "O": 189.53 },
+                "LD": { "P": 366.62, "S": 237.06, "O": 189.53 }
+              },
+              "export_c_per_kwh": null,
+              "service_r_month": 2519.88,
+              "capacity_r_kva_month": 39.00,
+              "demand_r_kva_month": 254.76,
+              "sseg_options": {
+                "SSEG Tariff 1": { "type": "flat", "c_per_kwh": 96.18 },
+                "SSEG Tariff 1 + Incentive": { "type": "flat", "c_per_kwh": 121.18 },
+                "SSEG Tariff 2": { "type": "flat", "c_per_kwh": 68.46 },
+                "SSEG TOU": {
+                  "type": "tou",
+                  "HD": { "P": 625.73, "S": 135.65, "O": 91.18 },
+                  "LD": { "P": 243.47, "S": 124.74, "O": 81.18 }
+                }
+              },
+              "default_sseg": "SSEG Tariff 1 + Incentive"
+            },
+            "CoCT MV TOU": {
+              "type": "municipal_tou",
+              "energy_c_per_kwh": {
+                "HD": { "P": 759.78, "S": 242.26, "O": 184.74 },
+                "LD": { "P": 356.12, "S": 230.74, "O": 184.74 }
+              },
+              "export_c_per_kwh": null,
+              "service_r_month": 2610.22,
+              "capacity_r_kva_month": 19.15,
+              "demand_r_kva_month": 82.38,
+              "sseg_options": {
+                "SSEG Tariff 1": { "type": "flat", "c_per_kwh": 96.18 },
+                "SSEG Tariff 1 + Incentive": { "type": "flat", "c_per_kwh": 121.18 },
+                "SSEG Tariff 2": { "type": "flat", "c_per_kwh": 68.46 },
+                "SSEG TOU": {
+                  "type": "tou",
+                  "HD": { "P": 625.73, "S": 135.65, "O": 91.18 },
+                  "LD": { "P": 243.47, "S": 124.74, "O": 81.18 }
+                }
+              },
+              "default_sseg": "SSEG Tariff 1 + Incentive"
+            },
+            "CoCT HV TOU": {
+              "type": "municipal_tou",
+              "energy_c_per_kwh": {
+                "HD": { "P": 733.51, "S": 234.90, "O": 179.49 },
+                "LD": { "P": 344.60, "S": 223.80, "O": 179.49 }
+              },
+              "export_c_per_kwh": null,
+              "service_r_month": 2610.22,
+              "capacity_r_kva_month": 18.28,
+              "demand_r_kva_month": 78.67,
+              "sseg_options": {
+                "SSEG Tariff 1": { "type": "flat", "c_per_kwh": 96.18 },
+                "SSEG Tariff 1 + Incentive": { "type": "flat", "c_per_kwh": 121.18 },
+                "SSEG Tariff 2": { "type": "flat", "c_per_kwh": 68.46 },
+                "SSEG TOU": {
+                  "type": "tou",
+                  "HD": { "P": 625.73, "S": 135.65, "O": 91.18 },
+                  "LD": { "P": 243.47, "S": 124.74, "O": 81.18 }
+                }
+              },
+              "default_sseg": "SSEG Tariff 1 + Incentive"
+            }
+          }
         }
       ]
     },

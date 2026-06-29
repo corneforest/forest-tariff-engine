@@ -10,6 +10,28 @@ The version is authored in `pyproject.toml` and released as git tag `v{version}`
 [Semantic Versioning](https://semver.org/): PATCH = data fix on existing
 tariffs, MINOR = new tariffs/providers, MAJOR = schema or API break.
 
+## [1.12.0] - 2026-06-29
+
+### Added
+- **City of Cape Town 2026/27 tariff rates (draft budget, effective 2026-07-01).**
+  Updated all four existing CoCT tariffs with 2026/27 rates from the City of Cape
+  Town Draft Budget Annexure 6 (March 2026). Source is draft; confirm against the
+  final approved budget before the July go-live.
+  - CoCT Small Power Users 1: energy 298.10 c/kWh (+6.5%), service R4 204.18/month (+8.6%).
+    SSEG Tariff 1: 96.18, Tariff 1+Incentive: 121.18, Tariff 2: 68.46 c/kWh.
+  - CoCT LV TOU: HD Peak 783.74, HD Std 248.96, HD OP 189.53, LD Peak 366.62,
+    LD Std 237.06, LD OP 189.53 c/kWh. Service R2 519.88/month, NMD capacity
+    R39.00/kVA/month, demand R254.76/kVA/month. SSEG TOU HD P/S/O: 625.73/135.65/91.18,
+    LD P/S/O: 243.47/124.74/81.18 c/kWh.
+  - CoCT MV TOU: HD Peak 759.78, HD Std 242.26, HD OP 184.74, LD Peak 356.12,
+    LD Std 230.74, LD OP 184.74 c/kWh. Service R2 610.22/month, NMD capacity
+    R19.15/kVA/month, demand R82.38/kVA/month.
+  - CoCT HV TOU: HD Peak 733.51, HD Std 234.90, HD OP 179.49, LD Peak 344.60,
+    LD Std 223.80, LD OP 179.49 c/kWh. Service R2 610.22/month, NMD capacity
+    R18.28/kVA/month, demand R78.67/kVA/month.
+  All SSEG flat rates (Tariff 1/1+Incentive/2) and TOU rates are identical across
+  LV, MV, and HV TOU tariffs.
+
 ## [1.11.0] - 2026-06-18
 
 ### Added
