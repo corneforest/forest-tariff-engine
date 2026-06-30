@@ -1,5 +1,10 @@
 # Changelog
 
+## [1.19.0] - 2026-06-29
+
+### Added
+- tariffs: Stellenbosch 2026/27 rates (TOU LV/MV, IND1, effective 2026-07-01)
+
 ## [1.20.0] - 2026-06-29
 
 ### Added
