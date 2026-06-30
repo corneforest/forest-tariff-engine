@@ -3,16 +3,6 @@
 ## [1.20.0] - 2026-06-29
 
 ### Added
-- tariffs: Hessequa 2026/27 rates (Bulk 71-500 kVA, Bulk >500 kVA, effective 2026-07-01)
-
-## [1.19.0] - 2026-06-29
-
-### Added
-- tariffs: Stellenbosch 2026/27 rates (TOU LV/MV, IND1, effective 2026-07-01)
-
-## [1.20.0] - 2026-06-29
-
-### Added
 - tariffs: Hessequa 2026/27 rates (Bulk 71-500 kVA, Bulk >500 kVA, from BVM schedule, effective 2026-07-01)
 
 ## [1.19.0] - 2026-06-29
