@@ -5308,7 +5308,7 @@
         {
           "effective": "2026-07-01",
           "tariffs": {
-            "Stellenbosch TOU LV (TOU1)": {
+            "Stellenbosch TOU LV": {
               "type": "municipal_tou",
               "energy_c_per_kwh": {
                 "HD": {
@@ -5339,7 +5339,7 @@
               "demand_r_kva_month": 123.66,
               "tou_schedule": "stellenbosch-2025"
             },
-            "Stellenbosch TOU MV (TOU2)": {
+            "Stellenbosch TOU MV": {
               "type": "municipal_tou",
               "energy_c_per_kwh": {
                 "HD": {
@@ -5370,7 +5370,7 @@
               "demand_r_kva_month": 106.34,
               "tou_schedule": "stellenbosch-2025"
             },
-            "Stellenbosch IND1": {
+            "Stellenbosch Large Power LV >80A (IND1)": {
               "type": "municipal_flat",
               "energy_c_per_kwh": {
                 "HD": {

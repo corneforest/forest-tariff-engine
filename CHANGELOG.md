@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.20.1] - 2026-06-30
+
+### Fixed
+- tariffs: revert Stellenbosch 2026/27 tariff names to their established names so they stay continuous across rate years (downstream lookups are by name): `Stellenbosch TOU LV (TOU1)` -> `Stellenbosch TOU LV`, `Stellenbosch TOU MV (TOU2)` -> `Stellenbosch TOU MV`, `Stellenbosch IND1` -> `Stellenbosch Large Power LV >80A (IND1)`. Rate values unchanged.
+- tests: restores the test suite to green (the renamed names had broken the tariff-name and TOU-schedule assertions).
+
 ## [1.20.0] - 2026-06-29
 
 ### Added
