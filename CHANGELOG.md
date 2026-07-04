@@ -1,6 +1,12 @@
 # Changelog
 
-## [1.20.1] - 2026-06-30
+## [1.21.0] - 2026-07-04
+
+### Changed
+- tariffs: Stellenbosch 2026/27 TOU periods now follow the Eskom clock (per the municipality's published 2026/27 schedule, identical band-for-band). The 2026-07-01 version block points at the "eskom" TOU schedule; the 2025-07-01 block keeps "stellenbosch-2025" so historical date lookups are unchanged.
+
+### Added
+- tariffs: new provider Emfuleni (ELM) with 8 tariffs, both 2025/26 and 2026/27 (proposed, 9.01%) versions: Commercial Prepaid/Conventional (<=100 kVA), Commercial SPU LV 400V (>100 kVA), Commercial SPU MV (<1 MVA), Commercial LPU MV (>1 MVA, <=66 kV), Commercial LPU HV (66-132 kV, >1 MVA), Miniflex TOU (LV, <1 MVA), Megaflex TOU (MV, >1 MVA). Source: ELM NERSA tariff application dated 30 March 2026, effective 2026-07-01. 2026/27 rates are proposed pending NERSA approval. No export/SSEG tariffs published; Megaflex network demand charge mapped to demand, network access charge to capacity (NMD); Nightsave and closed Bulk tariffs not included (seasonal demand structure unsupported).
 
 ### Fixed
 - tariffs: revert Stellenbosch 2026/27 tariff names to their established names so they stay continuous across rate years (downstream lookups are by name): `Stellenbosch TOU LV (TOU1)` -> `Stellenbosch TOU LV`, `Stellenbosch TOU MV (TOU2)` -> `Stellenbosch TOU MV`, `Stellenbosch IND1` -> `Stellenbosch Large Power LV >80A (IND1)`. Rate values unchanged.

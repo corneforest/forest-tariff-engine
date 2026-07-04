@@ -5337,7 +5337,7 @@
               "service_r_month": 6461.86,
               "capacity_r_kva_month": 100.37,
               "demand_r_kva_month": 123.66,
-              "tou_schedule": "stellenbosch-2025"
+              "tou_schedule": "eskom"
             },
             "Stellenbosch TOU MV": {
               "type": "municipal_tou",
@@ -5368,7 +5368,7 @@
               "service_r_month": 12231.43,
               "capacity_r_kva_month": 86.11,
               "demand_r_kva_month": 106.34,
-              "tou_schedule": "stellenbosch-2025"
+              "tou_schedule": "eskom"
             },
             "Stellenbosch Large Power LV >80A (IND1)": {
               "type": "municipal_flat",
@@ -5399,7 +5399,7 @@
               "service_r_month": 3381.53,
               "capacity_r_kva_month": 90.77,
               "demand_r_kva_month": 458.29,
-              "tou_schedule": "stellenbosch-2025"
+              "tou_schedule": "eskom"
             }
           }
         }
@@ -6970,6 +6970,326 @@
               "service_r_month": 377.68,
               "capacity_r_kva_month": 0,
               "demand_r_kva_month": 0
+            }
+          }
+        }
+      ]
+    },
+    "Emfuleni": {
+      "escalation_month": 7,
+      "escalation_day": 1,
+      "versions": [
+        {
+          "effective": "2025-07-01",
+          "tariffs": {
+            "Emfuleni Commercial Prepaid (<=100 kVA)": {
+              "type": "municipal_flat",
+              "energy_c_per_kwh": {
+                "HD": {
+                  "P": 382.0,
+                  "S": 382.0,
+                  "O": 382.0
+                },
+                "LD": {
+                  "P": 365.94,
+                  "S": 365.94,
+                  "O": 365.94
+                }
+              },
+              "export_c_per_kwh": null,
+              "service_r_month": 1678.69,
+              "capacity_r_kva_month": 0,
+              "demand_r_kva_month": 0
+            },
+            "Emfuleni Commercial Conventional (<=100 kVA)": {
+              "type": "municipal_flat",
+              "energy_c_per_kwh": {
+                "HD": {
+                  "P": 472.04,
+                  "S": 472.04,
+                  "O": 472.04
+                },
+                "LD": {
+                  "P": 341.35,
+                  "S": 341.35,
+                  "O": 341.35
+                }
+              },
+              "export_c_per_kwh": null,
+              "service_r_month": 1762.34,
+              "capacity_r_kva_month": 0,
+              "demand_r_kva_month": 0
+            },
+            "Emfuleni Commercial SPU LV 400V (>100 kVA)": {
+              "type": "municipal_flat",
+              "energy_c_per_kwh": {
+                "HD": {
+                  "P": 227.94,
+                  "S": 227.94,
+                  "O": 227.94
+                },
+                "LD": {
+                  "P": 156.63,
+                  "S": 156.63,
+                  "O": 156.63
+                }
+              },
+              "export_c_per_kwh": null,
+              "service_r_month": 6199.0,
+              "capacity_r_kva_month": 0,
+              "demand_r_kva_month": 618.55
+            },
+            "Emfuleni Commercial SPU MV (<1 MVA)": {
+              "type": "municipal_flat",
+              "energy_c_per_kwh": {
+                "HD": {
+                  "P": 227.94,
+                  "S": 227.94,
+                  "O": 227.94
+                },
+                "LD": {
+                  "P": 156.63,
+                  "S": 156.63,
+                  "O": 156.63
+                }
+              },
+              "export_c_per_kwh": null,
+              "service_r_month": 6199.0,
+              "capacity_r_kva_month": 0,
+              "demand_r_kva_month": 639.11
+            },
+            "Emfuleni Commercial LPU MV (>1 MVA, <=66 kV)": {
+              "type": "municipal_flat",
+              "energy_c_per_kwh": {
+                "HD": {
+                  "P": 263.71,
+                  "S": 263.71,
+                  "O": 263.71
+                },
+                "LD": {
+                  "P": 164.89,
+                  "S": 164.89,
+                  "O": 164.89
+                }
+              },
+              "export_c_per_kwh": null,
+              "service_r_month": 6199.0,
+              "capacity_r_kva_month": 0,
+              "demand_r_kva_month": 639.11
+            },
+            "Emfuleni Commercial LPU HV (66-132 kV, >1 MVA)": {
+              "type": "municipal_flat",
+              "energy_c_per_kwh": {
+                "HD": {
+                  "P": 229.2,
+                  "S": 229.2,
+                  "O": 229.2
+                },
+                "LD": {
+                  "P": 164.74,
+                  "S": 164.74,
+                  "O": 164.74
+                }
+              },
+              "export_c_per_kwh": null,
+              "service_r_month": 6199.0,
+              "capacity_r_kva_month": 0,
+              "demand_r_kva_month": 607.19
+            },
+            "Emfuleni Miniflex TOU (LV, <1 MVA)": {
+              "type": "municipal_tou",
+              "energy_c_per_kwh": {
+                "HD": {
+                  "P": 1141.58,
+                  "S": 330.37,
+                  "O": 154.62
+                },
+                "LD": {
+                  "P": 386.67,
+                  "S": 256.31,
+                  "O": 146.57
+                }
+              },
+              "export_c_per_kwh": null,
+              "service_r_month": 5573.69,
+              "capacity_r_kva_month": 122.99,
+              "demand_r_kva_month": 0
+            },
+            "Emfuleni Megaflex TOU (MV, >1 MVA)": {
+              "type": "municipal_tou",
+              "energy_c_per_kwh": {
+                "HD": {
+                  "P": 1100.98,
+                  "S": 286.93,
+                  "O": 155.76
+                },
+                "LD": {
+                  "P": 337.65,
+                  "S": 206.87,
+                  "O": 139.66
+                }
+              },
+              "export_c_per_kwh": null,
+              "service_r_month": 32825.65,
+              "capacity_r_kva_month": 122.99,
+              "demand_r_kva_month": 138.71
+            }
+          }
+        },
+        {
+          "effective": "2026-07-01",
+          "tariffs": {
+            "Emfuleni Commercial Prepaid (<=100 kVA)": {
+              "type": "municipal_flat",
+              "energy_c_per_kwh": {
+                "HD": {
+                  "P": 416.42,
+                  "S": 416.42,
+                  "O": 416.42
+                },
+                "LD": {
+                  "P": 398.91,
+                  "S": 398.91,
+                  "O": 398.91
+                }
+              },
+              "export_c_per_kwh": null,
+              "service_r_month": 1829.94,
+              "capacity_r_kva_month": 0,
+              "demand_r_kva_month": 0
+            },
+            "Emfuleni Commercial Conventional (<=100 kVA)": {
+              "type": "municipal_flat",
+              "energy_c_per_kwh": {
+                "HD": {
+                  "P": 514.57,
+                  "S": 514.57,
+                  "O": 514.57
+                },
+                "LD": {
+                  "P": 372.1,
+                  "S": 372.1,
+                  "O": 372.1
+                }
+              },
+              "export_c_per_kwh": null,
+              "service_r_month": 1921.13,
+              "capacity_r_kva_month": 0,
+              "demand_r_kva_month": 0
+            },
+            "Emfuleni Commercial SPU LV 400V (>100 kVA)": {
+              "type": "municipal_flat",
+              "energy_c_per_kwh": {
+                "HD": {
+                  "P": 248.48,
+                  "S": 248.48,
+                  "O": 248.48
+                },
+                "LD": {
+                  "P": 170.74,
+                  "S": 170.74,
+                  "O": 170.74
+                }
+              },
+              "export_c_per_kwh": null,
+              "service_r_month": 6757.53,
+              "capacity_r_kva_month": 0,
+              "demand_r_kva_month": 674.28
+            },
+            "Emfuleni Commercial SPU MV (<1 MVA)": {
+              "type": "municipal_flat",
+              "energy_c_per_kwh": {
+                "HD": {
+                  "P": 248.48,
+                  "S": 248.48,
+                  "O": 248.48
+                },
+                "LD": {
+                  "P": 170.74,
+                  "S": 170.74,
+                  "O": 170.74
+                }
+              },
+              "export_c_per_kwh": null,
+              "service_r_month": 6757.53,
+              "capacity_r_kva_month": 0,
+              "demand_r_kva_month": 696.69
+            },
+            "Emfuleni Commercial LPU MV (>1 MVA, <=66 kV)": {
+              "type": "municipal_flat",
+              "energy_c_per_kwh": {
+                "HD": {
+                  "P": 287.47,
+                  "S": 287.47,
+                  "O": 287.47
+                },
+                "LD": {
+                  "P": 179.75,
+                  "S": 179.75,
+                  "O": 179.75
+                }
+              },
+              "export_c_per_kwh": null,
+              "service_r_month": 6757.53,
+              "capacity_r_kva_month": 0,
+              "demand_r_kva_month": 696.69
+            },
+            "Emfuleni Commercial LPU HV (66-132 kV, >1 MVA)": {
+              "type": "municipal_flat",
+              "energy_c_per_kwh": {
+                "HD": {
+                  "P": 249.85,
+                  "S": 249.85,
+                  "O": 249.85
+                },
+                "LD": {
+                  "P": 179.58,
+                  "S": 179.58,
+                  "O": 179.58
+                }
+              },
+              "export_c_per_kwh": null,
+              "service_r_month": 6757.53,
+              "capacity_r_kva_month": 0,
+              "demand_r_kva_month": 661.9
+            },
+            "Emfuleni Miniflex TOU (LV, <1 MVA)": {
+              "type": "municipal_tou",
+              "energy_c_per_kwh": {
+                "HD": {
+                  "P": 1244.44,
+                  "S": 360.14,
+                  "O": 168.55
+                },
+                "LD": {
+                  "P": 421.51,
+                  "S": 279.4,
+                  "O": 159.78
+                }
+              },
+              "export_c_per_kwh": null,
+              "service_r_month": 6075.88,
+              "capacity_r_kva_month": 134.07,
+              "demand_r_kva_month": 0
+            },
+            "Emfuleni Megaflex TOU (MV, >1 MVA)": {
+              "type": "municipal_tou",
+              "energy_c_per_kwh": {
+                "HD": {
+                  "P": 1200.18,
+                  "S": 312.78,
+                  "O": 169.79
+                },
+                "LD": {
+                  "P": 368.07,
+                  "S": 225.51,
+                  "O": 152.24
+                }
+              },
+              "export_c_per_kwh": null,
+              "service_r_month": 35783.24,
+              "capacity_r_kva_month": 134.07,
+              "demand_r_kva_month": 151.21
             }
           }
         }

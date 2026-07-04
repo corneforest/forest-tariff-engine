@@ -216,8 +216,17 @@ class TestTOUSchedules:
         assert get_tou_period(3, 12, 1, False, "stellenbosch-2025")[1] != 1
 
     def test_tariff_carries_schedule(self):
-        assert get_tariff_rates("Stellenbosch TOU LV").tou_schedule == "stellenbosch-2025"
+        # From 2026/27 Stellenbosch follows the Eskom TOU clock.
+        assert get_tariff_rates("Stellenbosch TOU LV").tou_schedule == "eskom"
         assert get_tariff_rates("Eskom Miniflex").tou_schedule == "eskom"
+
+    def test_stellenbosch_historical_schedule(self):
+        # The 2025/26 rate year must keep the stellenbosch-2025 clock.
+        import datetime as dt
+        from tariff_engine.rates import _load_tariff_json_for_date, _resolve_tariff_rates
+        data = _load_tariff_json_for_date("Stellenbosch TOU LV", dt.date(2026, 3, 1))
+        rates = _resolve_tariff_rates("Stellenbosch TOU LV", data)
+        assert rates.tou_schedule == "stellenbosch-2025"
 
 
 # ============================================================================
