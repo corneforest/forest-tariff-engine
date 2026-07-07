@@ -1,5 +1,10 @@
 # Changelog
 
+## [1.22.0] - 2026-07-07
+
+### Added
+- tariffs: City of Johannesburg 2026/27 rates (effective 2026-07-01). All charges on all 5 CoJ tariffs (Industrial TOU LV/MV/HV, Large Consumer Demand LV/MV) escalated 8.63% off 2025/26: energy, export, service and demand. Verify against the published City Power 2026/27 schedule when available, in particular the export rate (flat 90.05 -> 97.82 c/kWh), which municipalities sometimes escalate at a different rate than consumption charges.
+
 ## [1.21.0] - 2026-07-04
 
 ### Changed

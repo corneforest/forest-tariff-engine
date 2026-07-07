@@ -4584,6 +4584,161 @@
               "demand_r_kva_month": 395.48
             }
           }
+        },
+        {
+          "effective": "2026-07-01",
+          "tariffs": {
+            "CoJ Industrial TOU LV": {
+              "type": "municipal_tou",
+              "energy_c_per_kwh": {
+                "HD": {
+                  "P": 770.09,
+                  "S": 298.06,
+                  "O": 206.26
+                },
+                "LD": {
+                  "P": 327.4,
+                  "S": 248.1,
+                  "O": 192.22
+                }
+              },
+              "export_c_per_kwh": {
+                "HD": {
+                  "P": 97.82,
+                  "S": 97.82,
+                  "O": 97.82
+                },
+                "LD": {
+                  "P": 97.82,
+                  "S": 97.82,
+                  "O": 97.82
+                }
+              },
+              "service_r_month": 4613.51,
+              "capacity_r_kva_month": 0.0,
+              "demand_r_kva_month": 459.67
+            },
+            "CoJ Industrial TOU MV": {
+              "type": "municipal_tou",
+              "energy_c_per_kwh": {
+                "HD": {
+                  "P": 770.09,
+                  "S": 298.06,
+                  "O": 206.26
+                },
+                "LD": {
+                  "P": 327.4,
+                  "S": 248.1,
+                  "O": 192.22
+                }
+              },
+              "export_c_per_kwh": {
+                "HD": {
+                  "P": 97.82,
+                  "S": 97.82,
+                  "O": 97.82
+                },
+                "LD": {
+                  "P": 97.82,
+                  "S": 97.82,
+                  "O": 97.82
+                }
+              },
+              "service_r_month": 12664.17,
+              "capacity_r_kva_month": 0.0,
+              "demand_r_kva_month": 429.61
+            },
+            "CoJ Industrial TOU HV": {
+              "type": "municipal_tou",
+              "energy_c_per_kwh": {
+                "HD": {
+                  "P": 770.09,
+                  "S": 298.06,
+                  "O": 206.26
+                },
+                "LD": {
+                  "P": 327.4,
+                  "S": 248.1,
+                  "O": 192.22
+                }
+              },
+              "export_c_per_kwh": {
+                "HD": {
+                  "P": 97.82,
+                  "S": 97.82,
+                  "O": 97.82
+                },
+                "LD": {
+                  "P": 97.82,
+                  "S": 97.82,
+                  "O": 97.82
+                }
+              },
+              "service_r_month": 86461.34,
+              "capacity_r_kva_month": 0.0,
+              "demand_r_kva_month": 399.53
+            },
+            "CoJ Large Consumer Demand LV": {
+              "type": "municipal_flat",
+              "energy_c_per_kwh": {
+                "HD": {
+                  "P": 339.14,
+                  "S": 339.14,
+                  "O": 339.14
+                },
+                "LD": {
+                  "P": 290.49,
+                  "S": 290.49,
+                  "O": 290.49
+                }
+              },
+              "export_c_per_kwh": {
+                "HD": {
+                  "P": 97.82,
+                  "S": 97.82,
+                  "O": 97.82
+                },
+                "LD": {
+                  "P": 97.82,
+                  "S": 97.82,
+                  "O": 97.82
+                }
+              },
+              "service_r_month": 3847.21,
+              "capacity_r_kva_month": 0.0,
+              "demand_r_kva_month": 459.61
+            },
+            "CoJ Large Consumer Demand MV": {
+              "type": "municipal_flat",
+              "energy_c_per_kwh": {
+                "HD": {
+                  "P": 320.27,
+                  "S": 320.27,
+                  "O": 320.27
+                },
+                "LD": {
+                  "P": 271.6,
+                  "S": 271.6,
+                  "O": 271.6
+                }
+              },
+              "export_c_per_kwh": {
+                "HD": {
+                  "P": 97.82,
+                  "S": 97.82,
+                  "O": 97.82
+                },
+                "LD": {
+                  "P": 97.82,
+                  "S": 97.82,
+                  "O": 97.82
+                }
+              },
+              "service_r_month": 11691.99,
+              "capacity_r_kva_month": 0.0,
+              "demand_r_kva_month": 429.61
+            }
+          }
         }
       ]
     },
