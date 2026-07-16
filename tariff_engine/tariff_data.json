@@ -5748,6 +5748,191 @@
               "demand_r_kva_month": 488.0
             }
           }
+        },
+        {
+          "effective": "2026-07-01",
+          "tariffs": {
+            "Saldanha Bay Bulk LV up to 70 kVA": {
+              "type": "municipal_flat",
+              "energy_c_per_kwh": {
+                "HD": {
+                  "P": 174.12,
+                  "S": 174.12,
+                  "O": 174.12
+                },
+                "LD": {
+                  "P": 174.12,
+                  "S": 174.12,
+                  "O": 174.12
+                }
+              },
+              "export_c_per_kwh": {
+                "HD": {
+                  "P": 114.0,
+                  "S": 114.0,
+                  "O": 114.0
+                },
+                "LD": {
+                  "P": 114.0,
+                  "S": 114.0,
+                  "O": 114.0
+                }
+              },
+              "service_r_month": 4895.0,
+              "capacity_r_kva_month": 0,
+              "demand_r_kva_month": 533.0
+            },
+            "Saldanha Bay Bulk LV 71 to 500 kVA": {
+              "type": "municipal_flat",
+              "energy_c_per_kwh": {
+                "HD": {
+                  "P": 174.12,
+                  "S": 174.12,
+                  "O": 174.12
+                },
+                "LD": {
+                  "P": 174.12,
+                  "S": 174.12,
+                  "O": 174.12
+                }
+              },
+              "export_c_per_kwh": {
+                "HD": {
+                  "P": 114.0,
+                  "S": 114.0,
+                  "O": 114.0
+                },
+                "LD": {
+                  "P": 114.0,
+                  "S": 114.0,
+                  "O": 114.0
+                }
+              },
+              "service_r_month": 4895.0,
+              "capacity_r_kva_month": 0,
+              "demand_r_kva_month": 533.0
+            },
+            "Saldanha Bay Bulk LV 501 to 630 kVA": {
+              "type": "municipal_flat",
+              "energy_c_per_kwh": {
+                "HD": {
+                  "P": 174.12,
+                  "S": 174.12,
+                  "O": 174.12
+                },
+                "LD": {
+                  "P": 174.12,
+                  "S": 174.12,
+                  "O": 174.12
+                }
+              },
+              "export_c_per_kwh": {
+                "HD": {
+                  "P": 114.0,
+                  "S": 114.0,
+                  "O": 114.0
+                },
+                "LD": {
+                  "P": 114.0,
+                  "S": 114.0,
+                  "O": 114.0
+                }
+              },
+              "service_r_month": 36816.0,
+              "capacity_r_kva_month": 0,
+              "demand_r_kva_month": 533.0
+            },
+            "Saldanha Bay Bulk MV 71 to 500 kVA": {
+              "type": "municipal_flat",
+              "energy_c_per_kwh": {
+                "HD": {
+                  "P": 174.12,
+                  "S": 174.12,
+                  "O": 174.12
+                },
+                "LD": {
+                  "P": 174.12,
+                  "S": 174.12,
+                  "O": 174.12
+                }
+              },
+              "export_c_per_kwh": {
+                "HD": {
+                  "P": 114.0,
+                  "S": 114.0,
+                  "O": 114.0
+                },
+                "LD": {
+                  "P": 114.0,
+                  "S": 114.0,
+                  "O": 114.0
+                }
+              },
+              "service_r_month": 4895.0,
+              "capacity_r_kva_month": 0,
+              "demand_r_kva_month": 533.0
+            },
+            "Saldanha Bay Bulk MV 501 to 1000 kVA": {
+              "type": "municipal_flat",
+              "energy_c_per_kwh": {
+                "HD": {
+                  "P": 174.12,
+                  "S": 174.12,
+                  "O": 174.12
+                },
+                "LD": {
+                  "P": 174.12,
+                  "S": 174.12,
+                  "O": 174.12
+                }
+              },
+              "export_c_per_kwh": {
+                "HD": {
+                  "P": 114.0,
+                  "S": 114.0,
+                  "O": 114.0
+                },
+                "LD": {
+                  "P": 114.0,
+                  "S": 114.0,
+                  "O": 114.0
+                }
+              },
+              "service_r_month": 46510.0,
+              "capacity_r_kva_month": 0,
+              "demand_r_kva_month": 533.0
+            },
+            "Saldanha Bay Bulk MV Above 1000 kVA": {
+              "type": "municipal_flat",
+              "energy_c_per_kwh": {
+                "HD": {
+                  "P": 174.12,
+                  "S": 174.12,
+                  "O": 174.12
+                },
+                "LD": {
+                  "P": 174.12,
+                  "S": 174.12,
+                  "O": 174.12
+                }
+              },
+              "export_c_per_kwh": {
+                "HD": {
+                  "P": 114.0,
+                  "S": 114.0,
+                  "O": 114.0
+                },
+                "LD": {
+                  "P": 114.0,
+                  "S": 114.0,
+                  "O": 114.0
+                }
+              },
+              "service_r_month": 72030.0,
+              "capacity_r_kva_month": 0,
+              "demand_r_kva_month": 533.0
+            }
+          }
         }
       ]
     },

@@ -1,5 +1,10 @@
 # Changelog
 
+## [1.23.0] - 2026-07-16
+
+### Added
+- tariffs: Saldanha Bay 2026/27 rates (effective 2026-07-01), on the six established Bulk LV/MV tariffs. In the municipality's 2026/27 schedule the "Bulk LV/MV" names are marked "Deleted" and replaced by "Industrial Consumers" kVA bands (Tariff 3); the published band values are exactly the 2025/26 Bulk figures escalated by the stated 9.26% electricity increase (~9.24% realised). We keep the established Bulk names for continuity (downstream lookups are by name) and map each to the band covering its kVA range: energy 159.39 -> 174.12 c/kWh (R1.7412), demand R488 -> R533/kVA, service R4 895/m (71-500 kVA), R36 816/m (501-630), R46 510/m (501-1000 MV / 631-999 band), R72 030/m (>1000 kVA / 1-5 MVA). Export/SSEG set flat to 114 c/kWh (Tariff 4 Domestic Infeed, R1.14/kWh; was R1.04). Source: Saldanha Bay 2026/27 Rates and tariffs document, section 3, page 5.
+
 ## [1.22.0] - 2026-07-07
 
 ### Added
