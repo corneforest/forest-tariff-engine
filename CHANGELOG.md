@@ -1,5 +1,10 @@
 # Changelog
 
+## [1.24.0] - 2026-08-19
+
+### Fixed
+- tariffs: City of Cape Town 2026/27 energy charges corrected to the approved schedule (Annexure 6, 2026/27 Budget, June 2026). The stored 2026/27 values were a provisional estimate that overstated every energy (c/kWh) rate by exactly 4.04 c/kWh across all four modelled tariffs (SPU1, LV/MV/HV TOU) and all TOU periods. Cause: the estimate assumed an unregulated levy portion of ~41.10 c/kWh; the approved figure dropped it to 37.06 c/kWh. Examples (R excl VAT): LV TOU HD Peak 783.74 -> 779.70, LV TOU off-peak 189.53 -> 185.49, MV TOU HD Peak 759.78 -> 755.74, HV TOU HD Peak 733.51 -> 729.47, SPU1 energy 298.10 -> 294.06. Service, demand, network capacity (NMD) and all SSEG rates already matched the approved schedule and are unchanged. Slightly reduces modelled grid cost, so solar/BESS savings on CoCT cases were marginally overstated before this fix.
+
 ## [1.23.0] - 2026-07-16
 
 ### Added
