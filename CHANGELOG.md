@@ -1,5 +1,10 @@
 # Changelog
 
+## [1.24.1] - 2026-08-19
+
+### Fixed
+- tariffs: revert Mogale City 2026/27 Non-TOU tariff names to their established 2025/26 names so they stay continuous across rate years (downstream lookups are by name). The 2026/27 block had dropped the parentheses, so the engine treated them as separate tariffs and flagged them "not in 2025/26": `Mogale City Commercial Medium Non-TOU` -> `Mogale City Commercial Medium (Non-TOU)`, `Mogale City Commercial Large Non-TOU` -> `Mogale City Commercial Large (Non-TOU)`, `Mogale City Industrial Large Non-TOU` -> `Mogale City Industrial Large (Non-TOU)`. The three FlexiTime TOU names already matched across both years. Rate values unchanged.
+
 ## [1.24.0] - 2026-08-19
 
 ### Fixed

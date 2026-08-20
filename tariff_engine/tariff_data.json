@@ -5118,7 +5118,7 @@
               "capacity_r_kva_month": 51.8192,
               "demand_r_kva_month": 104.3543
             },
-            "Mogale City Commercial Medium Non-TOU": {
+            "Mogale City Commercial Medium (Non-TOU)": {
               "type": "municipal_flat",
               "energy_c_per_kwh": {
                 "HD": {
@@ -5137,7 +5137,7 @@
               "capacity_r_kva_month": 51.82,
               "demand_r_kva_month": 64.85
             },
-            "Mogale City Commercial Large Non-TOU": {
+            "Mogale City Commercial Large (Non-TOU)": {
               "type": "municipal_flat",
               "energy_c_per_kwh": {
                 "HD": {
@@ -5156,7 +5156,7 @@
               "capacity_r_kva_month": 51.91,
               "demand_r_kva_month": 104.54
             },
-            "Mogale City Industrial Large Non-TOU": {
+            "Mogale City Industrial Large (Non-TOU)": {
               "type": "municipal_flat",
               "energy_c_per_kwh": {
                 "HD": {
