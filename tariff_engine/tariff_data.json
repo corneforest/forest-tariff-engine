@@ -5055,6 +5055,25 @@
               "service_r_month": 14455.28,
               "capacity_r_kva_month": 47.62,
               "demand_r_kva_month": 153.2
+            },
+            "Mogale City Industrial Large FlexiTime TOU": {
+              "type": "municipal_tou",
+              "energy_c_per_kwh": {
+                "HD": {
+                  "P": 1095.97,
+                  "S": 285.0,
+                  "O": 152.2
+                },
+                "LD": {
+                  "P": 307.77,
+                  "S": 188.53,
+                  "O": 131.84
+                }
+              },
+              "export_c_per_kwh": null,
+              "service_r_month": 14422.0,
+              "capacity_r_kva_month": 47.54,
+              "demand_r_kva_month": 134.28
             }
           }
         },
@@ -5174,6 +5193,25 @@
               "service_r_month": 15757.71,
               "capacity_r_kva_month": 51.82,
               "demand_r_kva_month": 167.01
+            },
+            "Mogale City Industrial Large FlexiTime TOU": {
+              "type": "municipal_tou",
+              "energy_c_per_kwh": {
+                "HD": {
+                  "P": 1194.7181,
+                  "S": 310.6485,
+                  "O": 165.9162
+                },
+                "LD": {
+                  "P": 335.4998,
+                  "S": 205.5156,
+                  "O": 143.7194
+                }
+              },
+              "export_c_per_kwh": null,
+              "service_r_month": 15721.42,
+              "capacity_r_kva_month": 51.8192,
+              "demand_r_kva_month": 146.3786
             }
           }
         }

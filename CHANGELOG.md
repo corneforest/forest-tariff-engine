@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.25.0] - 2026-08-19
+
+### Added
+- tariffs: new Mogale City tariff `Mogale City Industrial Large FlexiTime TOU` (Time-of-Use, >600 kVA industrial), added to both the 2025/26 and 2026/27 version blocks. The engine previously carried Industrial Large only as a Non-TOU (flat) tariff, so TOU-metered Industrial Large customers could not be modelled. 2026/27 values (NERSA-approved, effective 2026-07-01): service R15 721.42/m; HD peak/std/off 1194.72 / 310.65 / 165.92 c/kWh; LD peak/std/off 335.50 / 205.52 / 143.72 c/kWh; demand R146.38/kVA; capacity R51.82/kVA. 2025/26 values: service R14 422.00/m; HD 1095.97 / 285.00 / 152.20; LD 307.77 / 188.53 / 131.84; demand R134.28; capacity R47.54. Both years verified against the official NERSA approval letters (2026/27: Ref NER/D/GT411, approved 22 May 2026; 2025/26: Mogale City 2025/26 approval letter, page 5), and the 2026/27 High-Demand rates confirmed against a customer bill.
+
+### Verified
+- tariffs: confirmed all six existing Mogale City 2026/27 tariffs already match the NERSA-approved rates (approved figures equal the 9.01% column of the draft application, which is what was loaded). No rate corrections required. Note: the approved schedule also lists an Industrial Medium (Non-TOU) tariff (263.80 c/kWh) the engine does not carry; left out of scope.
+
 ## [1.24.1] - 2026-08-19
 
 ### Fixed
