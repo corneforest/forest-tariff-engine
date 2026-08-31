@@ -26,3 +26,6 @@ Thumbs.db
 
 # OS
 desktop.ini
+
+# Claude Code local state (settings, worktrees, caches)
+.claude/
